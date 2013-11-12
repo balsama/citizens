@@ -1,0 +1,186 @@
+/**
+ * @file base.scss
+ */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.125em;
+  height: 100%;
+  line-height: 1.4em;
+  margin: 0; }
+
+::selection {
+  background-color: #555555;
+  color: #a3a3a3; }
+
+::-moz-selection {
+  background-color: #555555;
+  color: #a3a3a3; }
+
+/* modern browser clearfix */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+.clearfix:after {
+  clear: both; }
+
+/* links */
+a:link,
+a:visited {
+  text-decoration: none; }
+
+a:hover,
+a:active {
+  text-decoration: none; }
+
+/* default image treatment */
+img {
+  display: block;
+  height: auto;
+  max-width: 100%; }
+
+/* lists */
+ul, ol, ul.primary,
+ul li, ol li {
+  margin: 0;
+  padding: 0; }
+
+blockquote {
+  border: 1px solid #a3a3a3;
+  border-width: 1px 0;
+  font-size: 1.3em;
+  margin: 1.3em 0;
+  padding: 1.3em;
+  text-align: center; }
+  blockquote p:last-child {
+    margin-bottom: 0; }
+
+/* Rollover edit links for blocks. */
+div.block {
+  position: relative; }
+  div.block .edit {
+    display: none;
+    position: absolute;
+    right: -20px;
+    top: -5px;
+    z-index: 40;
+    padding: 3px 8px 0;
+    font-size: 10px;
+    line-height: 16px;
+    background-color: white;
+    border: 1px solid #555555;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 1px 3px #555555;
+    -webkit-box-shadow: 0 1px 3px #555555;
+    box-shadow: 0 1px 3px #555555; }
+    div.block .edit a {
+      display: block;
+      border: 0;
+      padding: 0;
+      margin: 0; }
+  div.block :hover .edit {
+    display: block; }
+
+/* Headings */
+blockquote,
+.heading {
+  font-family: 'Oxygen', sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bold;
+  line-height: 1.3em; }
+
+h1 {
+  font-size: 1.6em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.3em; }
+
+h4 {
+  font-size: 1em; }
+
+h5 {
+  font-size: 0.9em; }
+
+h6 {
+  font-size: 0.7em; }
+
+.center {
+  text-align: center; }
+
+.font-light {
+  font-weight: 100; }
+
+.font-normal {
+  font-weight: 400; }
+
+.font-heavy {
+  font-weight: 900; }
+
+/* paragraphs */
+p {
+  margin: 1em 0; }
+
+/**
+ * Tables
+ */
+table {
+  margin: 20px 0;
+  width: 100%; }
+  table thead th {
+    font-weight: normal;
+    padding: .3em 0; }
+  table tbody {
+    border-top: none; }
+    table tbody tr.even,
+    table tbody tr.odd {
+      background-color: transparent;
+      font-weight: bold;
+      padding: 0; }
+      table tbody tr.even:hover,
+      table tbody tr.odd:hover {
+        background-color: #fcfcfc; }
+      table tbody tr.even td,
+      table tbody tr.odd td {
+        padding: .425em 2em .425em 0; }
+
+/**
+ * Hide elements from all users.
+ *
+ * Used for elements which should not be immediately displayed to any user. An
+ * example would be a collapsible fieldset that will be expanded with a click
+ * from a user. The effect of this class can be toggled with the jQuery show()
+ * and hide() functions.
+ */
+.element-hidden {
+  display: none; }
+
+/**
+ * Hide elements visually, but keep them available for screen-readers.
+ *
+ * Used for information required for screen-reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user. Must
+ * not be used for focusable elements (such as links and form elements) as this
+ * causes issues for keyboard only or voice recognition users.
+ */
+.element-invisible {
+  height: 0;
+  overflow: hidden;
+  position: absolute; }
+
+/**
+ * Misc
+ */
+.center-contents {
+  text-align: center; }

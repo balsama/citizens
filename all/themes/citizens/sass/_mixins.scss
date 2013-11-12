@@ -1,0 +1,87 @@
+// /**
+//  * Mixin Definitions
+//  */
+
+// borders
+@mixin solid-border($size: 1px, $color: #d0d0d0) {
+  border: $size solid $color;
+}
+@mixin solid-border-footer($size: 30px, $color: #000, $r: 0, $g: 0, $b: 0, $a: .85) {
+  border-bottom: $size solid $color;
+  border-bottom: $size solid rgba($r, $g, $b, $a);
+}
+
+// rounded
+@mixin rounded($vert, $horz, $radius: 10px) {
+  border-#{$vert}-#{$horz}-radius: $radius;
+  -moz-border-radius-#{$vert}#{$horz}: $radius;
+  -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+}
+@mixin rounded-all($radius: 8px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// shadows
+@mixin box-shadow($horz: 1px, $vert: 1px, $blur: 2px, $color: #ccc) {
+  -moz-box-shadow: $horz $vert $blur $color;
+  -webkit-box-shadow: $horz $vert $blur $color;
+  box-shadow: $horz $vert $blur $color;
+}
+@mixin box-shadow-spread($horz: 1px, $vert: 1px, $blur: 2px, $spread: 2px, $color: #ccc) {
+  -moz-box-shadow: $horz $vert $blur $spread $color;
+  -webkit-box-shadow: $horz $vert $blur $spread $color;
+  box-shadow: $horz $vert $blur $spread $color;
+}
+@mixin text-shadow($horz: 1px, $vert:1px, $blur: 0, $color: #555) {
+  text-shadow: $horz $vert $blur $color;
+}
+
+// gradients
+@mixin gradient-radial($innerColor: #fff, $outerColor: #dae9f4)  {
+  background-color: $outerColor;
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from($innerColor), to($outerColor));
+  background: -webkit-radial-gradient(circle, $innerColor, $outerColor);
+  background: -moz-radial-gradient(circle, $innerColor, $outerColor);
+  background: -o-radial-gradient(circle, $innerColor, $outerColor);
+  background-repeat: no-repeat;
+}
+
+// rotate
+@mixin rotate-2d($deg: 90) {
+  transform: rotate(#{$deg}deg);
+  -ms-transform: rotate(#{$deg}deg); /* IE 9 */
+  -webkit-transform: rotate(#{$deg}deg); /* Safari and Chrome */
+}
+
+// Override box model
+@mixin border-box-model {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+// Reset
+@mixin content-box-model {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+// margin and padding
+@mixin no-marg-pad {
+  margin: 0;
+  padding: 0;
+}
+
+// modern browser clearfix
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

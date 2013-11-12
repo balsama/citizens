@@ -1,0 +1,20 @@
+// /**
+//  * Global Variables
+//  */
+
+$base: 1.125em; // All other font sizes are based on this. 1em = 18px
+
+$dark-gray: #555;
+$light-gray: #a3a3a3;
+
+// Widths
+$width: 1150;
+$percentage-850: ((850 / $width) * 100%);
+$percentage-410: ((410/ $width) * 100%);
+$percentage-150: ((150 / $width) * 100%);
+$col-width-2-col: ((410 / 850) * 100%);
+
+// Colors
+$tan-light: #fbf6f2;
+$white: #fff;
+$gray-light: #d0d0d0;

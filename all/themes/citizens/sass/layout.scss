@@ -1,0 +1,30 @@
+/**
+ * @file layout
+ */
+@import 'vars';
+
+#page {
+  margin: 0 auto;
+  max-width: 1150px;
+}
+
+.default-padding {
+  background-color: #c9f;
+  padding: 20px $percentage-150;
+  width: 100%;
+}
+
+.col-2-grid-outer {
+  .field-item {
+    margin: 10px 0;
+    width: $col-width-2-col;
+    &:nth-child(odd) {
+      clear: left;
+      float: left;
+    }
+    &:nth-child(even) {
+      clear: right;
+      float: right;
+    }
+  }
+}

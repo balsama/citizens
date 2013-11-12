@@ -1,0 +1,21 @@
+/**
+ * @file layout
+ */
+#page {
+  margin: 0 auto;
+  max-width: 1150px; }
+
+.default-padding {
+  background-color: #c9f;
+  padding: 20px 13.04348%;
+  width: 100%; }
+
+.col-2-grid-outer .field-item {
+  margin: 10px 0;
+  width: 48.23529%; }
+  .col-2-grid-outer .field-item:nth-child(odd) {
+    clear: left;
+    float: left; }
+  .col-2-grid-outer .field-item:nth-child(even) {
+    clear: right;
+    float: right; }

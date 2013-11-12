@@ -1,0 +1,46 @@
+name = Citizens
+description = HTML5, SASS, Responsive grid base theme.
+screenshot = images/screenshot.gif
+core = "7.x"
+project = "citizens"
+engine = phptemplate
+
+regions[page_top] = Page top
+regions[header] = Header
+regions[navigation_primary] = Navigation primary
+regions[navigation_secondary] = Navigation secondary
+regions[feature_top] = Feature top
+regions[content_top] = Content top
+regions[content] = Content
+regions[content_bottom] = Content bottom
+regions[feature_bottom] = Feature bottom
+regions[footer] = Footer
+regions[page_bottom] = Page bottom
+
+features[] = name
+features[] = search
+features[] = main_menu
+features[] = secondary_menu
+
+; Stylesheets
+stylesheets[all][] = css/base.css
+stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/module.css
+stylesheets[all][] = css/state.css
+stylesheets[all][] = css/theme.css
+stylesheets[print][] = css/print.css
+
+; Scripts
+scripts[] = js/modernizr.js
+scripts[] = js/theme.js
+
+settings[citizens_tabs] = 1
+settings[citizens_breadcrumb] = 1
+settings[citizens_breadcrumb_home] = 1
+settings[citizens_breadcrumb_separator] = »
+settings[citizens_layout_mode] = 0
+settings[clear_registry] = 0
+settings[citizens_ie_enabled] = 0
+settings[citizens_ie_enabled_versions][ie8] = 0
+settings[citizens_ie_enabled_versions][ie9] = 0
+settings[citizens_ie_enabled_versions][ie10] = 0

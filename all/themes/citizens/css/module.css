@@ -1,0 +1,7 @@
+/**
+ * @file module definitions
+ */
+.zebra:nth-child(odd) {
+  background-color: #fbf6f2; }
+.zebra:nth-child(even) {
+  background-color: white; }

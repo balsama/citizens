@@ -1,0 +1,15 @@
+/**
+ * @file module definitions
+ */
+
+@import "vars";
+@import "mixins";
+
+.zebra {
+  &:nth-child(odd) {
+    background-color: $tan-light;
+  }
+  &:nth-child(even) {
+    background-color: $white;
+  }
+}
