@@ -23,16 +23,17 @@ features[] = main_menu
 features[] = secondary_menu
 
 ; Stylesheets
+stylesheets[all][] = css/icofonts.css
+stylesheets[all][] = css/normalize.css
 stylesheets[all][] = css/base.css
 stylesheets[all][] = css/layout.css
 stylesheets[all][] = css/module.css
-stylesheets[all][] = css/state.css
 stylesheets[all][] = css/theme.css
+stylesheets[all][] = css/state.css
 stylesheets[print][] = css/print.css
 
 ; Scripts
 scripts[] = js/modernizr.js
-scripts[] = js/theme.js
 
 settings[citizens_tabs] = 1
 settings[citizens_breadcrumb] = 1
@@ -44,3 +45,29 @@ settings[citizens_ie_enabled] = 0
 settings[citizens_ie_enabled_versions][ie8] = 0
 settings[citizens_ie_enabled_versions][ie9] = 0
 settings[citizens_ie_enabled_versions][ie10] = 0
+
+fonticon[why_citizens] = '&#x61;'
+fonticon[what_we_do] = '&#x62;'
+fonticon[video_audio] = '&#x63;'
+fonticon[team_citizens] = '&#x64;'
+fonticon[speeches] = '&#x65;'
+fonticon[solar_homes] = '&#x66;'
+fonticon[shelter_gas] = '&#x67;'
+fonticon[press_releases] = '&#x68;'
+fonticon[op_eds] = '&#x69;'
+fonticon[joe_for_oil] = '&#x6a;'
+fonticon[in_the_news] = '&#x6b;'
+fonticon[heating_assistance] = '&#x6c;'
+fonticon[distrigas] = '&#x6d;'
+fonticon[corporate_history] = '&#x6e;'
+fonticon[completed_initiatives] = '&#x6f;'
+fonticon[citizens_wind] = '&#x70;'
+fonticon[citizens_transmission] = '&#x71;'
+fonticon[citizens_solar] = '&#x72;'
+fonticon[business_initiatives] = '&#x73;'
+fonticon[assistance_programs] = '&#x74;'
+fonticon[articles] = '&#x75;'
+fonticon[play] = '&#x76;'
+fonticon[menu] = '&#x77;'
+fonticon[connection] = '&#x78;'
+

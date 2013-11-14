@@ -15,11 +15,11 @@ html {
 
 ::selection {
   background-color: #555555;
-  color: #a3a3a3; }
+  color: #d0d0d0; }
 
 ::-moz-selection {
   background-color: #555555;
-  color: #a3a3a3; }
+  color: #d0d0d0; }
 
 /* modern browser clearfix */
 .clearfix:before, .clearfix:after {
@@ -31,10 +31,12 @@ html {
 /* links */
 a:link,
 a:visited {
+  color: #0035ad;
   text-decoration: none; }
 
 a:hover,
 a:active {
+  color: #0035ad;
   text-decoration: none; }
 
 /* default image treatment */
@@ -50,19 +52,17 @@ ul li, ol li {
   padding: 0; }
 
 blockquote {
-  border: 1px solid #a3a3a3;
+  border: 1px solid #d0d0d0;
   border-width: 1px 0;
   font-size: 1.3em;
   margin: 1.3em 0;
-  padding: 1.3em;
+  padding: 0.3em 1.3em;
   text-align: center; }
-  blockquote p:last-child {
-    margin-bottom: 0; }
 
 /* Rollover edit links for blocks. */
-div.block {
+.block {
   position: relative; }
-  div.block .edit {
+  .block .edit {
     display: none;
     position: absolute;
     right: -20px;
@@ -79,12 +79,12 @@ div.block {
     -moz-box-shadow: 0 1px 3px #555555;
     -webkit-box-shadow: 0 1px 3px #555555;
     box-shadow: 0 1px 3px #555555; }
-    div.block .edit a {
+    .block .edit a {
       display: block;
       border: 0;
       padding: 0;
       margin: 0; }
-  div.block :hover .edit {
+  .block :hover .edit {
     display: block; }
 
 /* Headings */
@@ -115,7 +115,8 @@ h5 {
 h6 {
   font-size: 0.7em; }
 
-.center {
+h2 {
+  font-weight: 100;
   text-align: center; }
 
 .font-light {
@@ -180,7 +181,63 @@ table {
   position: absolute; }
 
 /**
+ * Floats
+ */
+.f-left {
+  float: left; }
+
+.f-right {
+  float: right; }
+
+.f-none {
+  float: none; }
+
+/**
  * Misc
  */
+.center,
 .center-contents {
   text-align: center; }
+
+.content-image {
+  padding: 0 20px 5px 0; }
+
+.all-caps {
+  text-transform: uppercase; }
+
+.no-wrap {
+  white-space: nowrap; }
+
+/**
+ * Relative sizes
+ */
+.font-small {
+  font-size: 0.722em; }
+
+.reverse-contrast {
+  background-color: #222222;
+  color: #d0d0d0; }
+  .reverse-contrast a {
+    color: #d0d0d0; }
+  .reverse-contrast.reverse-contrast-lighter {
+    background-color: #303030;
+    color: white; }
+    .reverse-contrast.reverse-contrast-lighter a {
+      color: white; }
+
+/**
+ * Vertical center
+ */
+.vc-outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%; }
+
+.vc-inner {
+  display: table-cell;
+  vertical-align: middle; }
+
+/**
+ * Admin
+ */

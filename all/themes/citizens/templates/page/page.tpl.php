@@ -1,23 +1,27 @@
 <div id="page" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
-  <div id="header">
+  <div id="header" class="reverse-contrast heading font-small">
+    <div class="inner header-inner default-padding">
     <?php if ($page['header']): ?>
       <div id="header-region">
         <?php print render($page['header']); ?>
       </div>
     <?php endif; ?>
+    </div>
   </div>
 
 
-  <div id="navigation-primary" class="navigation menu">
-    <div class="inner naviagation-primary-inner">
+  <div id="navigation-primary" class="navigation menu reverse-contrast reverse-contrast-lighter heading all-caps">
+    <div class="inner navigation-primary-inner default-padding clearfix font-light">
+      <?php print l('<div class="clearfix">' . theme('image', array('path' => base_path() . path_to_theme() . '/css/images/citizens-energy.png', 'alt' => 'Citizens Energy Logo', 'title' => 'Home', 'attributes' => array('id' => 'logo', 'class' => 'f-left'))) . '</div>', '<front>', array('html' => TRUE, 'attributes' => array('id' => 'logo-container'))); ?>
+      <div id="main-drop-down-toggle"><i class="icon-menu"></i></div>
       <?php print render($page['navigation_primary']); ?>
     </div>
   </div><!-- /#navigation-primary -->
 
   <div id="navigation-secondary" class="navigation menu">
-    <div class="inner naviagation-secondary-inner">
-      <h1><?php print $title; ?></h1>
+    <div class="inner naviagation-secondary-inner center-contents">
+      <h1 class="font-normal"><?php print $title; ?></h1>
       <?php print render($page['navigation_secondary']); ?>
     </div>
   </div><!-- /#navigation-secondary -->
@@ -34,7 +38,7 @@
 
     <?php if ($tabs): ?>
     <div class="tabs">
-      <?php print render($tabs); ?>
+      <?php //print render($tabs); ?>
     </div>
     <?php endif; ?>
 

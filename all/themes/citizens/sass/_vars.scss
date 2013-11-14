@@ -3,9 +3,8 @@
 //  */
 
 $base: 1.125em; // All other font sizes are based on this. 1em = 18px
-
-$dark-gray: #555;
-$light-gray: #a3a3a3;
+$medium-small: 0.833; // 15px
+$small: 0.722em; // 13px
 
 // Widths
 $width: 1150;
@@ -18,3 +17,8 @@ $col-width-2-col: ((410 / 850) * 100%);
 $tan-light: #fbf6f2;
 $white: #fff;
 $gray-light: #d0d0d0;
+$gray-dark: #555;
+$gray: #a3a3a3;
+$blue: #0035ad;
+$black-22: #222;
+$black-30: #303030;

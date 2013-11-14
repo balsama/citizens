@@ -15,12 +15,12 @@ html {
   margin: 0;
 }
 ::selection {
-  background-color: $dark-gray;
-  color: $light-gray;
+  background-color: $gray-dark;
+  color: $gray-light;
 }
 ::-moz-selection {
-  background-color: $dark-gray;
-  color: $light-gray;
+  background-color: $gray-dark;
+  color: $gray-light;
 }
 
 /* modern browser clearfix */
@@ -37,9 +37,15 @@ html {
 
 /* links */
 a:link,
-a:visited { text-decoration: none;}
+a:visited {
+  color: $blue;
+  text-decoration: none;
+}
 a:hover,
-a:active { text-decoration: none;}
+a:active {
+  color: $blue;
+  text-decoration: none;
+}
 
 /* default image treatment */
 img {
@@ -57,21 +63,20 @@ ul li, ol li {
 
 // Blockquotes
 blockquote {
-  border: 1px solid $light-gray;
+  border: 1px solid $gray-light;
   border-width: 1px 0;
   font-size: 1.3em;
   margin: 1.3em 0;
-  padding: 1.3em;
+  padding: 0.3em 1.3em;
   text-align: center;
   p {
     &:last-child {
-      margin-bottom: 0;
     }
   }
 }
 
 /* Rollover edit links for blocks. */
-div.block {
+.block {
   position: relative;
   .edit {
     display: none;
@@ -83,9 +88,9 @@ div.block {
     font-size: 10px;
     line-height: 16px;
     background-color: white;
-    border: 1px solid $dark-gray;
+    border: 1px solid $gray-dark;
     @include rounded-all(3px);
-    @include box-shadow(0, 1px, 3px, $dark-gray);
+    @include box-shadow(0, 1px, 3px, $gray-dark);
     a {
       display: block;
       border: 0;
@@ -113,7 +118,11 @@ h4 {font-size: 1em;}
 h5 {font-size: 0.9em;}
 h6 {font-size: 0.7em;}
 
-.center {text-align: center;}
+h2 {
+  font-weight: 100;
+  text-align: center;
+}
+
 .font-light {font-weight: 100;}
 .font-normal {font-weight: 400;}
 .font-heavy {font-weight: 900;}
@@ -174,9 +183,67 @@ table {
   overflow: hidden;
   position: absolute;
 }
+
+/**
+ * Floats
+ */
+.f-left {float: left;}
+.f-right {float: right;}
+.f-none {float: none;}
+
 /**
  * Misc
  */
+.center,
 .center-contents {
   text-align: center;
 }
+.content-image {
+  padding: 0 20px 5px 0;
+}
+.all-caps {
+  text-transform: uppercase;
+}
+.no-wrap {
+  white-space: nowrap;
+}
+
+/**
+ * Relative sizes
+ */
+.font-small {
+  font-size: $small;
+}
+
+.reverse-contrast {
+  background-color: $black-22;
+  color: $gray-light;
+  a {
+    color: $gray-light;
+  }
+  &.reverse-contrast-lighter {
+    background-color: $black-30;
+    color: $white;
+    a {
+      color: $white;
+    }
+  }
+}
+
+/**
+ * Vertical center
+ */
+.vc-outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.vc-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/**
+ * Admin
+ */

@@ -3,12 +3,17 @@
  */
 #page {
   margin: 0 auto;
-  max-width: 1150px; }
+  max-width: 1150px;
+  min-width: 430px;
+  position: relative; }
 
 .default-padding {
-  background-color: #c9f;
   padding: 20px 13.04348%;
   width: 100%; }
+  #header .default-padding {
+    padding: 20px; }
+  #navigation-primary .default-padding {
+    padding: 10px 20px; }
 
 .col-2-grid-outer .field-item {
   margin: 10px 0;

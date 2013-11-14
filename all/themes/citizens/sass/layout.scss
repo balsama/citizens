@@ -6,12 +6,19 @@
 #page {
   margin: 0 auto;
   max-width: 1150px;
+  min-width: 430px;
+  position: relative;
 }
 
 .default-padding {
-  background-color: #c9f;
   padding: 20px $percentage-150;
   width: 100%;
+  #header & {
+    padding: 20px;
+  }
+  #navigation-primary & {
+    padding: 10px 20px;
+  }
 }
 
 .col-2-grid-outer {

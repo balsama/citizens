@@ -1,9 +1,8 @@
 <?php
 
-/**
- * Here we override the default HTML output of drupal.
- * refer to http://drupal.org/node/550722
- */
+// Add a custom, theme-specific JS file. Added here so it can be placed in the
+// footer instead of the header which is where the info file places JS.
+drupal_add_js(drupal_get_path('theme', 'citizens') . '/js/theme.js', array('type' => 'file', 'scope' => 'footer'));
 
 // Auto-rebuild the theme registry during theme development.
 if (theme_get_setting('clear_registry')) {
@@ -302,5 +301,9 @@ function citizens_menu_local_tasks(&$variables) {
     $output .= drupal_render($variables['secondary']);
   }
   return $output;
+}
+
+function citizens_menu_tree__main_menu($variables){
+    return "<ul class='inline font-small main-menu no-wrap'>\n" . $variables['tree'] ."</ul>\n";
 }
 

@@ -73,6 +73,13 @@
   margin: 0;
   padding: 0;
 }
+// absolute center
+@mixin absolute-center($element-width: 1em) {
+  left: 50%;
+  margin-left: -($element-width/2);
+  position: absolute;
+  top: 0px;
+}
 
 // modern browser clearfix
 @mixin clearfix {

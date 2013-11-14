@@ -1,0 +1,139 @@
+/**
+ * @file theme rules
+ */
+
+@import "vars";
+@import "mixins";
+
+/**
+ * Icon fonts as fields
+ */
+.field-type-fonticon-field {
+  background-color: #fff;
+  font-size: 2.6em;
+  height: 1.8em;
+  line-height: 1.8em;
+  text-align: center;
+  width: 1.8em;
+  @include rounded-all(2.6em);
+}
+.field-name-field-header-icon {
+  @include absolute-center(1.8em);
+  top: -0.9em;
+}
+
+/**
+ * Top Links
+ */
+
+/**
+ * Navigation Main
+ */
+#logo-container {
+  display: block;
+  float: left;
+  font-size: 0;
+  height: 100%;
+  margin-right: 40px;
+  width: 25%;
+  img#logo {
+    width: 100%;
+  }
+}
+
+/**
+ * Primary Links
+ */
+#navigation-primary .navigation-primary-inner {
+  height: 94px;
+  overflow: hidden;
+  ul.main-menu {
+    display: block;
+    margin-top: 25px;
+    z-index: 5;
+    li {
+      a {
+        padding: 9px 3.2%;
+        white-space: nowrap;
+        @include rounded-all(4px);
+        &:hover {
+          color: $gray-light;
+        }
+        &.active {
+          background-color: $blue;
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+      &.active-trail {
+        a {
+          background-color: $blue;
+        }
+      }
+      ul {
+        display: none;
+      }
+    }
+  }
+  #block-system-main-menu {
+    background-color: $black-30;
+    float: left;
+    padding-bottom: 8px;
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Drop down */
+  .main-drop-down {
+    background-color: $black-30;
+    display: none;
+    left: 0px;
+    position: absolute;
+    top: 146px;
+    width: 100%;
+    z-index: 10;
+    @include box-shadow(0px, 9px, 10px, #222);
+    ul {
+      li {
+        a {
+          clear: both;
+          display: block;
+          float: none;
+        }
+      }
+    }
+  }
+  #main-drop-down-toggle {
+    display: block;
+    font-size: 40px;
+    left: 360px;
+    position: absolute;
+    top: 84px;
+    z-index: 1;
+  }
+}
+
+/**
+ * Secondary Links
+ */
+#navigation-secondary {
+  ul.main-menu {
+    display: block;
+    margin: -6px 0 36px;
+    li {
+      padding: 0 1.7em;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
