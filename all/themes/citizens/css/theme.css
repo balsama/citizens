@@ -116,3 +116,44 @@ ul.menu.sf-menu-top-links ul {
       color: #222222; }
       #navigation-secondary ul.main-menu li a.active, #navigation-secondary ul.main-menu li a:hover {
         color: #0035ad; }
+
+/**
+ * Bottom Links
+ */
+#block-menu-menu-bottom-links {
+  padding: 20px 0 40px 40px; }
+  #block-menu-menu-bottom-links ul li {
+    display: block;
+    float: left;
+    width: 267.44186px; }
+    #block-menu-menu-bottom-links ul li > ul {
+      padding: 10px 0 0; }
+      #block-menu-menu-bottom-links ul li > ul li {
+        display: list-item;
+        float: none;
+        list-style-type: none;
+        list-style-image: none;
+        margin-left: 0; }
+        #block-menu-menu-bottom-links ul li > ul li a {
+          color: #a3a3a3; }
+          #block-menu-menu-bottom-links ul li > ul li a:hover {
+            color: white; }
+
+/**
+ * Override caption filter css - make all images align left
+ */
+/** aligned captions **/
+div.caption-left {
+  float: left;
+  margin: 10px 20px 10px 0; }
+
+div.caption-right {
+  float: right;
+  margin: 10px 0 10px 10px; }
+
+div.caption-center {
+  display: block;
+  text-align: center; }
+
+div.caption-center .caption-inner {
+  display: inline-block; }

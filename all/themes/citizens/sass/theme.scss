@@ -151,7 +151,58 @@ ul.menu.sf-menu-top-links {
   }
 }
 
+/**
+ * Bottom Links
+ */
+#block-menu-menu-bottom-links {
+  padding: 20px 0 40px 40px;
+  ul {
+    li {
+      display: block;
+      float: left;
+      width: ($width / 4.3) + px;
+      > ul {
+        padding: 10px 0 0;
+        li {
+          display: list-item;
+          float: none;
+          list-style-type: none;
+          list-style-image: none;
+          margin-left: 0;
+          a {
+            color: $gray;
+            &:hover {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
+/**
+ * Override caption filter css - make all images align left
+ */
+/** aligned captions **/
+div.caption-left {
+  float: left;
+  margin: 10px 20px 10px 0;
+}
+
+div.caption-right {
+  float: right;
+  margin: 10px 0 10px 10px;
+}
+
+div.caption-center {
+  display: block;
+  text-align: center;
+}
+
+div.caption-center .caption-inner {
+  display: inline-block;
+}
 
 
 

@@ -15,6 +15,12 @@
   #navigation-primary .default-padding {
     padding: 10px 20px; }
 
+.padding-tb {
+  padding: 20px 0; }
+
+.padding-all {
+  padding: 20px; }
+
 .col-2-grid-outer .field-item {
   margin: 10px 0;
   width: 48.23529%; }

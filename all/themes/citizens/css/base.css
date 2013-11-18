@@ -88,6 +88,7 @@ blockquote {
     display: block; }
 
 /* Headings */
+.caption,
 blockquote,
 .heading {
   font-family: 'Oxygen', sans-serif; }
@@ -204,6 +205,13 @@ table {
 .h-100 {
   height: 100%; }
 
+.table {
+  display: table;
+  width: 100%; }
+
+.table-cell {
+  display: table-cell; }
+
 /**
  * Misc
  */
@@ -211,11 +219,14 @@ table {
 .center-contents {
   text-align: center; }
 
-.content-image {
-  padding: 0 20px 5px 0; }
+.align-left {
+  text-align: left; }
 
 .all-caps {
   text-transform: uppercase; }
+
+.normal-case {
+  text-transform: none; }
 
 .no-wrap {
   white-space: nowrap; }
@@ -228,6 +239,13 @@ table {
 
 .font-normal {
   font-size: 1.125em; }
+
+.font-large-27 {
+  font-size: 1.5em;
+  line-height: 2em; }
+
+.line-height-triple {
+  line-height: 3em; }
 
 /**
  * Color Schemes
@@ -251,6 +269,12 @@ table {
 
 .font-white {
   color: white; }
+  .font-white a {
+    color: white; }
+
+.border-green,
+.button.border-green {
+  border-color: #638b2c; }
 
 /**
  * Vertical center

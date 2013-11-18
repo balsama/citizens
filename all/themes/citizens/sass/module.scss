@@ -20,7 +20,9 @@
  a.button,
 .button {
   background-color: #fff;
-  border: 4px solid $black-30;
+  border-width: 4px;
+  border-style: solid;
+  border-color: $black-30;
   border-radius: 4px;
   border-width: 0 2px 3px 0;
   color: $black-30;
@@ -33,4 +35,23 @@
   &:active {
     border-width: 3px 0px 0px 2px;
   }
+}
+
+/**
+ * Inline images
+ */
+.content-image {
+  clear: left;
+  padding: 0 20px 5px 0;
+  @include content-box-model;
+  .caption-inner & {
+    padding-right: 0;
+  }
+}
+.caption .caption-inner {
+  background-color: $gray-dark;
+  border: none;
+  color: $white;
+  font-weight: 100;
+  padding: 0 0 6px;
 }
