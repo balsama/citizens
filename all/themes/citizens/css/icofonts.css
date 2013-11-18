@@ -20,7 +20,6 @@
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -96,3 +95,15 @@
 
 .icon-connection:before {
   content: "\78"; }
+
+.icon-contact_us:before {
+  content: "\79"; }
+
+.icon-consumer_resources:before {
+  content: "\7a"; }
+
+.icon-about_citizens:before {
+  content: "\7b"; }
+
+.icon-arrow-down:before {
+  content: "\7c"; }

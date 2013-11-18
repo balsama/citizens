@@ -25,6 +25,23 @@
 /**
  * Top Links
  */
+ul.menu.sf-menu-top-links {
+  li {
+    padding: 0 10px;
+    a {
+      &.active {
+        color: $gray-light;
+      }
+    }
+  }
+  ul {
+    padding: 0 0 8px;
+    background-color: $black-22;
+    li {
+      margin: 4px 0;
+    }
+  }
+}
 
 /**
  * Navigation Main
@@ -123,6 +140,13 @@
     margin: -6px 0 36px;
     li {
       padding: 0 1.7em;
+      a {
+        color: $black-22;
+        &.active,
+        &:hover {
+          color: $blue;
+        }
+      }
     }
   }
 }

@@ -19,6 +19,12 @@
     </div>
   </div><!-- /#navigation-primary -->
 
+  <?php if ($tabs): ?>
+    <div class="tabs heading all-caps font-small">
+      <?php print render($tabs); ?>
+    </div>
+  <?php endif; ?>
+
   <div id="navigation-secondary" class="navigation menu">
     <div class="inner naviagation-secondary-inner center-contents">
       <h1 class="font-normal"><?php print $title; ?></h1>
@@ -35,12 +41,6 @@
   <?php endif; ?>
 
   <div id="main" class="clearfix">
-
-    <?php if ($tabs): ?>
-    <div class="tabs">
-      <?php //print render($tabs); ?>
-    </div>
-    <?php endif; ?>
 
     <?php print $messages; ?>
 

@@ -1,0 +1,33 @@
+<?php
+/**
+ * Implements hook_menu_link_alter().
+ */
+function localemenu_menu_link_alter(&$item) {
+  if ($item['link_title'] == 'Español' || $item['link_title'] == 'English') {
+    $item['options']['alter'] = true;
+  }
+}
+
+/**
+ * Implements hook_translated_menu_alter().
+ */
+function localemenu_translated_menu_link_alter(&$item, $map) {
+  if ($item['link_title'] == 'Español' || $item['link_title'] == 'English') {
+    global $language;
+    $languages = language_list('enabled');
+    $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
+    $links = language_negotiation_get_switch_links('language', $path);
+
+    $pick = ($item['link_title'] == 'Español') ? 'es' : 'en';
+    $item['href'] = (isset($links->links[$pick]['href'])) ? ($links->links[$pick]['href']) : '';
+
+    $item['localized_options']['langcode'] = $pick;
+    $item['localized_options']['attributes']['class'][] = 'language-link';
+    $item['localized_options']['attributes']['lang'] = $pick;
+    $item['localized_options']['attributes']['xml:lang'] = $pick;
+    $item['localized_options']['language'] = new stdClass();
+    $item['localized_options']['language']->prefix = $languages[1][$pick]->prefix;
+    $item['localized_options']['language']->language = $pick;
+  }
+}
+

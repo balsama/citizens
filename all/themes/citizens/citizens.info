@@ -70,4 +70,8 @@ fonticon[articles] = '&#x75;'
 fonticon[play] = '&#x76;'
 fonticon[menu] = '&#x77;'
 fonticon[connection] = '&#x78;'
+fonticon[contact_us] = '&#x79;'
+fonticon[consumer_resources] = '&#x7a;'
+fonticon[about_citizens] = '&#x7b;'
+fonticon[arrow-down] = '&#x7c;'
 

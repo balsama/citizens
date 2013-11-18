@@ -181,7 +181,7 @@ table {
   position: absolute; }
 
 /**
- * Floats
+ * Floats and percentages
  */
 .f-left {
   float: left; }
@@ -191,6 +191,18 @@ table {
 
 .f-none {
   float: none; }
+
+.p-70 {
+  width: 70%; }
+
+.p-30 {
+  width: 30%; }
+
+.inline {
+  display: inline-block; }
+
+.h-100 {
+  height: 100%; }
 
 /**
  * Misc
@@ -214,6 +226,12 @@ table {
 .font-small {
   font-size: 0.722em; }
 
+.font-normal {
+  font-size: 1.125em; }
+
+/**
+ * Color Schemes
+ */
 .reverse-contrast {
   background-color: #222222;
   color: #d0d0d0; }
@@ -224,6 +242,15 @@ table {
     color: white; }
     .reverse-contrast.reverse-contrast-lighter a {
       color: white; }
+
+.background-green {
+  background-color: #8dc63f; }
+
+.background-green-darker {
+  background-color: #6db027; }
+
+.font-white {
+  color: white; }
 
 /**
  * Vertical center
@@ -241,3 +268,15 @@ table {
 /**
  * Admin
  */
+/* Tabs */
+ul.tabs {
+  border: 0;
+  position: absolute; }
+  ul.tabs li a {
+    background-color: transparent;
+    border: 0;
+    padding-bottom: 4px; }
+  ul.tabs li.active a {
+    background-color: #303030;
+    border: 0;
+    color: white; }

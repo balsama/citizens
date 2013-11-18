@@ -25,6 +25,16 @@
 /**
  * Top Links
  */
+ul.menu.sf-menu-top-links li {
+  padding: 0 10px; }
+  ul.menu.sf-menu-top-links li a.active {
+    color: #d0d0d0; }
+ul.menu.sf-menu-top-links ul {
+  padding: 0 0 8px;
+  background-color: #222222; }
+  ul.menu.sf-menu-top-links ul li {
+    margin: 4px 0; }
+
 /**
  * Navigation Main
  */
@@ -102,3 +112,7 @@
   margin: -6px 0 36px; }
   #navigation-secondary ul.main-menu li {
     padding: 0 1.7em; }
+    #navigation-secondary ul.main-menu li a {
+      color: #222222; }
+      #navigation-secondary ul.main-menu li a.active, #navigation-secondary ul.main-menu li a:hover {
+        color: #0035ad; }

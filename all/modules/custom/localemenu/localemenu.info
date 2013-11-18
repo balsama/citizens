@@ -1,0 +1,6 @@
+name = "Locale Menu"
+description = "Provides language switcher menu items for each enabled language."
+package = Multilingual - Internationalization
+core = 7.x
+version = "7.x-1.0"
+
