@@ -46,3 +46,47 @@ a.button,
   color: white;
   font-weight: 100;
   padding: 0 0 6px; }
+
+/* Rollover edit links for blocks. */
+.block {
+  position: relative; }
+  .block .edit {
+    display: none;
+    position: absolute;
+    right: -20px;
+    top: -5px;
+    z-index: 40;
+    padding: 3px 8px 0;
+    font-size: 10px;
+    line-height: 16px;
+    background-color: white;
+    border: 1px solid #555555;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 1px 3px #555555;
+    -webkit-box-shadow: 0 1px 3px #555555;
+    box-shadow: 0 1px 3px #555555; }
+    .block .edit a {
+      display: block;
+      border: 0;
+      padding: 0;
+      margin: 0; }
+  .block :hover .edit {
+    display: block; }
+
+/**
+ * Admin
+ */
+/* Tabs */
+ul.tabs {
+  border: 0;
+  position: absolute; }
+  ul.tabs li a {
+    background-color: transparent;
+    border: 0;
+    padding-bottom: 4px; }
+  ul.tabs li.active a {
+    background-color: #303030;
+    border: 0;
+    color: white; }

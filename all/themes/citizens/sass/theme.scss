@@ -13,6 +13,7 @@
   font-size: 2.6em;
   height: 1.8em;
   line-height: 1.8em;
+  margin: auto;
   text-align: center;
   width: 1.8em;
   @include rounded-all(2.6em);
@@ -181,9 +182,6 @@ ul.menu.sf-menu-top-links {
   }
 }
 
-/**
- * Override caption filter css - make all images align left
- */
 /** aligned captions **/
 div.caption-left {
   float: left;
@@ -192,7 +190,7 @@ div.caption-left {
 
 div.caption-right {
   float: right;
-  margin: 10px 0 10px 10px;
+  margin: 10px 0 10px 20px;
 }
 
 div.caption-center {
@@ -204,7 +202,26 @@ div.caption-center .caption-inner {
   display: inline-block;
 }
 
-
+/**
+ * Features
+ */
+.bean-feature {
+  height: 625px;
+  position: relative;
+  .group-slide-tab {
+    left: 0px;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+  }
+  .group-slide-slide {
+    display: none;
+    left: 0px;
+    position: absolute;
+    top: 125px;
+  }
+}
 
 
 

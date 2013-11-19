@@ -1,0 +1,13 @@
+name = Imagefield CSS
+description = Imagefield formatter to display an image through a CSS declaration.
+package = Images
+core = 7.x
+
+dependencies[] = image
+
+; Information added by drupal.org packaging script on 2013-08-19
+version = "7.x-1.2"
+core = "7.x"
+project = "imagefield_css"
+datestamp = "1376944293"
+

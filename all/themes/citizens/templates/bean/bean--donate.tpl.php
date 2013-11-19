@@ -28,7 +28,6 @@
  */
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
   <div class="content table"<?php print $content_attributes; ?>>
     <div class="p-70 table-cell padding-tb">
       <span class="font-large-27 font-light normal-case"><?php print render($content['field_cta_text']); ?></span>

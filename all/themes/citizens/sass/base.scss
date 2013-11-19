@@ -61,7 +61,7 @@ ul li, ol li {
   padding: 0;
 }
 
-// Blockquotes
+/* Blockquotes */
 blockquote {
   border: 1px solid $gray-light;
   border-width: 1px 0;
@@ -72,34 +72,6 @@ blockquote {
   p {
     &:last-child {
     }
-  }
-}
-
-/* Rollover edit links for blocks. */
-.block {
-  position: relative;
-  .edit {
-    display: none;
-    position: absolute;
-    right: -20px;
-    top: -5px;
-    z-index: 40;
-    padding: 3px 8px 0;
-    font-size: 10px;
-    line-height: 16px;
-    background-color: white;
-    border: 1px solid $gray-dark;
-    @include rounded-all(3px);
-    @include box-shadow(0, 1px, 3px, $gray-dark);
-    a {
-      display: block;
-      border: 0;
-      padding: 0;
-      margin: 0;
-    }
-  }
-  :hover .edit {
-    display: block;
   }
 }
 
@@ -286,27 +258,4 @@ table {
 .vc-inner {
   display: table-cell;
   vertical-align: middle;
-}
-
-/**
- * Admin
- */
-/* Tabs */
-ul.tabs {
-  border: 0;
-  position: absolute;
-  li {
-    a {
-      background-color: transparent;
-      border: 0;
-      padding-bottom: 4px;
-    }
-    &.active {
-      a {
-        background-color: $black-30;
-        border: 0;
-        color: $white;
-      }
-    }
-  }
 }
