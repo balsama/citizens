@@ -60,6 +60,20 @@ ul li, ol li {
   margin: 0;
   padding: 0;
 }
+.content ul,
+.content ol {
+  margin-left: 1.2em;
+}
+ul.no-m-no-bul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+  }
+}
 
 /* Blockquotes */
 blockquote {
@@ -67,7 +81,7 @@ blockquote {
   border-width: 1px 0;
   font-size: 1.3em;
   margin: 1.3em 0;
-  padding: 0.3em 1.3em;
+  padding: 1.3em 1.3em;
   text-align: center;
   p {
     &:last-child {
@@ -83,6 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Oxygen', sans-serif;
   font-weight: bold;
   line-height: 1.3em;
+  margin: 0.5em 0;
 }
 h1 {font-size: 1.6em;}
 h2 {font-size: 1.5em;}
@@ -101,7 +116,15 @@ h2 {
 .font-heavy {font-weight: 900;}
 
 /* paragraphs */
-p {margin: 1em 0;}
+p {
+  margin: 1em 0;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
 
 /**
  * Tables
@@ -158,23 +181,6 @@ table {
 }
 
 /**
- * Floats and percentages
- */
-.f-left {float: left;}
-.f-right {float: right;}
-.f-none {float: none;}
-
-.p-70 {width: 70%;}
-.p-30 {width: 30%;}
-
-.inline {display: inline-block;}
-
-.h-100 {height: 100%;}
-
-.table {display: table; width: 100%}
-.table-cell {display: table-cell;}
-
-/**
  * Misc
  */
 .center,
@@ -194,6 +200,15 @@ table {
 .no-wrap {
   white-space: nowrap;
 }
+.rounded {
+  @include rounded-all();
+}
+.emphasized {
+  font-style: italic;
+}
+.background-tan {
+  background-color: $tan-light;
+}
 
 /**
  * Relative sizes
@@ -204,9 +219,16 @@ table {
 .font-normal {
   font-size: $base;
 }
+.font-larger {
+  font-size: $larger;
+}
 .font-large-27 {
   font-size: $large-27;
   line-height: ($large-27 + 0.5em);
+}
+.font-huge {
+  font-size: $huge;
+  line-height: $base;
 }
 .line-height-triple {
   line-height: 3em;
@@ -224,7 +246,7 @@ table {
   &.reverse-contrast-lighter {
     background-color: $black-30;
     color: $white;
-    a {
+    li > a {
       color: $white;
     }
   }
@@ -245,17 +267,29 @@ table {
 .button.border-green {
   border-color: $green-darkest;
 }
+.black,
+a.black:link,
+a.black:active,
+a.black:visited,
+a.black:hover {
+  color: $black-22;
+}
 
-/**
- * Vertical center
- */
-.vc-outer {
-  display: table;
-  position: absolute;
-  height: 100%;
-  width: 100%;
+.color-background {
+  &.blue1 {background-color: $blue1;}
+  &.orange {background-color: $orange;}
+  &.green {background-color: $green;}
+  &.blue2 {background-color: $blue2;}
+  &.white {background-color: $white;}
 }
-.vc-inner {
-  display: table-cell;
-  vertical-align: middle;
+
+.white-on-black {
+  background-color: $black-30;
+  color: $white;
+  a:link,
+  a:visited {
+    color: $white;
+  }
 }
+
+

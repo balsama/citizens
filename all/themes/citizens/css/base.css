@@ -51,13 +51,26 @@ ul li, ol li {
   margin: 0;
   padding: 0; }
 
+.content ul,
+.content ol {
+  margin-left: 1.2em; }
+
+ul.no-m-no-bul {
+  margin: 0;
+  padding: 0; }
+  ul.no-m-no-bul li {
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0; }
+
 /* Blockquotes */
 blockquote {
   border: 1px solid #d0d0d0;
   border-width: 1px 0;
   font-size: 1.3em;
   margin: 1.3em 0;
-  padding: 0.3em 1.3em;
+  padding: 1.3em 1.3em;
   text-align: center; }
 
 /* Headings */
@@ -69,7 +82,8 @@ blockquote,
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Oxygen', sans-serif;
   font-weight: bold;
-  line-height: 1.3em; }
+  line-height: 1.3em;
+  margin: 0.5em 0; }
 
 h1 {
   font-size: 1.6em; }
@@ -105,6 +119,10 @@ h2 {
 /* paragraphs */
 p {
   margin: 1em 0; }
+  p:first-child {
+    margin-top: 0; }
+  p:last-child {
+    margin-bottom: 0; }
 
 /**
  * Tables
@@ -155,37 +173,6 @@ table {
   position: absolute; }
 
 /**
- * Floats and percentages
- */
-.f-left {
-  float: left; }
-
-.f-right {
-  float: right; }
-
-.f-none {
-  float: none; }
-
-.p-70 {
-  width: 70%; }
-
-.p-30 {
-  width: 30%; }
-
-.inline {
-  display: inline-block; }
-
-.h-100 {
-  height: 100%; }
-
-.table {
-  display: table;
-  width: 100%; }
-
-.table-cell {
-  display: table-cell; }
-
-/**
  * Misc
  */
 .center,
@@ -204,6 +191,17 @@ table {
 .no-wrap {
   white-space: nowrap; }
 
+.rounded {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px; }
+
+.emphasized {
+  font-style: italic; }
+
+.background-tan {
+  background-color: #fbf6f2; }
+
 /**
  * Relative sizes
  */
@@ -213,9 +211,16 @@ table {
 .font-normal {
   font-size: 1.125em; }
 
+.font-larger {
+  font-size: 1.111em; }
+
 .font-large-27 {
   font-size: 1.5em;
   line-height: 2em; }
+
+.font-huge {
+  font-size: 3.222em;
+  line-height: 1.125em; }
 
 .line-height-triple {
   line-height: 3em; }
@@ -231,7 +236,7 @@ table {
   .reverse-contrast.reverse-contrast-lighter {
     background-color: #303030;
     color: white; }
-    .reverse-contrast.reverse-contrast-lighter a {
+    .reverse-contrast.reverse-contrast-lighter li > a {
       color: white; }
 
 .background-green {
@@ -249,15 +254,27 @@ table {
 .button.border-green {
   border-color: #638b2c; }
 
-/**
- * Vertical center
- */
-.vc-outer {
-  display: table;
-  position: absolute;
-  height: 100%;
-  width: 100%; }
+.black,
+a.black:link,
+a.black:active,
+a.black:visited,
+a.black:hover {
+  color: #222222; }
 
-.vc-inner {
-  display: table-cell;
-  vertical-align: middle; }
+.color-background.blue1 {
+  background-color: #0035ad; }
+.color-background.orange {
+  background-color: #fe9901; }
+.color-background.green {
+  background-color: #8dc63f; }
+.color-background.blue2 {
+  background-color: #00aeef; }
+.color-background.white {
+  background-color: white; }
+
+.white-on-black {
+  background-color: #303030;
+  color: white; }
+  .white-on-black a:link,
+  .white-on-black a:visited {
+    color: white; }

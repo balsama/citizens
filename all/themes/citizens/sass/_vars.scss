@@ -5,7 +5,9 @@
 $base: 1.125em; // All other font sizes are based on this. 1em = 18px
 $medium-small: 0.833em; // 15px
 $small: 0.722em; // 13px
-$large-27: 1.5em;
+$larger: 1.111em; // 20px
+$large-27: 1.5em; // 27px
+$huge: 3.222em; // 58px
 
 // Widths
 $width: 1150;
@@ -23,6 +25,15 @@ $gray: #a3a3a3;
 $blue: #0035ad;
 $black-22: #222;
 $black-30: #303030;
-$green: #8dc63f;
 $green-darker: #6db027;
 $green-darkest: #638b2c;
+
+$blue1: #0035ad;
+$orange: #fe9901;
+$green: #8dc63f;
+$blue2: #00aeef;
+
+$blue1-alpha-8: rgba(0, 53, 173, 0.8);
+$orange-alpha-8: rgba(254, 153, 1, 0.8);
+$green-alpha-8: rgba(141, 198, 63, 0.8);
+$blue2-alpha-8: rgba(0, 179, 239, 0.8);

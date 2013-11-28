@@ -12,6 +12,7 @@ regions[navigation_secondary] = Navigation secondary
 regions[feature_top] = Feature top
 regions[content_top] = Content top
 regions[content] = Content
+regions[jump_menu] = Jump menu
 regions[content_bottom] = Content bottom
 regions[feature_bottom] = Feature bottom
 regions[footer] = Footer

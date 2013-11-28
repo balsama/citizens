@@ -1,0 +1,6 @@
+name = "Jump Menu"
+description = "Provides a "jump" menu block."
+package = Other
+core = 7.x
+version = "7.x-1.0"
+

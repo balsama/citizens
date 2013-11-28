@@ -9,7 +9,7 @@
  * Icon fonts as fields
  */
 .field-type-fonticon-field {
-  background-color: #fff;
+  background-color: $white;
   font-size: 2.6em;
   height: 1.8em;
   line-height: 1.8em;
@@ -21,6 +21,20 @@
 .field-name-field-header-icon {
   @include absolute-center(1.8em);
   top: -0.9em;
+}
+.header-with-icon {
+  margin-top: 36px;
+  position: relative;
+}
+
+/* Jump page context */
+.field-name-field-section-list-icon {
+  margin-bottom: -0.9em;
+  .field-item {
+    background-color: $white;
+    position: relative;
+    @include rounded-all(2.6em);
+  }
 }
 
 /**
@@ -71,7 +85,7 @@ ul.menu.sf-menu-top-links {
     z-index: 5;
     li {
       a {
-        padding: 9px 3.2%;
+        padding: 9px 3%;
         white-space: nowrap;
         @include rounded-all(4px);
         &:hover {
@@ -136,16 +150,19 @@ ul.menu.sf-menu-top-links {
  * Secondary Links
  */
 #navigation-secondary {
-  ul.main-menu {
-    display: block;
-    margin: -6px 0 36px;
-    li {
-      padding: 0 1.7em;
-      a {
-        color: $black-22;
-        &.active,
-        &:hover {
-          color: $blue;
+  .secondary-links {
+    min-height: 25px;
+    margin: -6px 0 0;
+    ul.main-menu {
+      display: block;
+      li {
+        padding: 0 1.7em;
+        a {
+          color: $black-22;
+          &.active,
+          &:hover {
+            color: $blue;
+          }
         }
       }
     }
@@ -209,20 +226,159 @@ div.caption-center .caption-inner {
   height: 625px;
   position: relative;
   .group-slide-tab {
+    cursor: pointer;
     left: 0px;
+    height: 125px;
     overflow: hidden;
     position: absolute;
     text-align: center;
     top: 0px;
+    .field-type-fonticon-field {
+      background-color: transparent;
+    }
+  }
+  .slide-1 {
+    .field-name-field-slide-icon {color: $blue1;}
+  }
+  .slide-2 {
+    .field-name-field-slide-icon {color: $orange;}
+  }
+  .slide-3 {
+    .field-name-field-slide-icon {color: $green;}
+  }
+  .slide-4 {
+    .field-name-field-slide-icon {color: $blue2;}
+  }
+  .active-slide {
+    .group-slide-tab {
+      background-color: $gray;
+      color: $white;
+      .field-name-field-slide-icon {
+        color: $white;
+      }
+    }
+    &.slide-1 {
+      .group-slide-tab {
+        background-color: $blue1;
+      }
+      .group-slide-cta {
+        background-color: $blue1-alpha-8;
+      }
+    }
+    &.slide-2 {
+      .group-slide-tab {
+        background-color: $orange;
+      }
+      .group-slide-cta {
+        background-color: $orange-alpha-8;
+      }
+    }
+    &.slide-3 {
+      .group-slide-tab {
+        background-color: $green;
+      }
+      .group-slide-cta {
+        background-color: $green-alpha-8;
+      }
+    }
+    &.slide-4 {
+      .group-slide-tab {
+        background-color: $blue2;
+      }
+      .group-slide-cta {
+        background-color: $blue2-alpha-8;
+      }
+    }
   }
   .group-slide-slide {
     display: none;
     left: 0px;
     position: absolute;
     top: 125px;
+    .group-slide-cta {
+      background-color: rgba(100, 100, 100, 0.7);
+      padding: 20px;
+      .field-name-field-slide-cta-title {
+        font-size: $large-27;
+        line-height: $base;
+      }
+      .field-name-field-slide-cta-copy {
+        font-family: 'EB Garamond', serif;
+      }
+    }
   }
 }
 
+/**
+ * Jump pages
+ */
+/* First Section */
+.node-jump-page .content  .field-item-first .field-name-field-section-heading {
+  margin-top: 1.8em;
+}
+
+/**
+ * Messages
+ */
+div.messages {
+  background-color: #4ea5cd;
+  background-image: none;
+  border: none;
+  color: #fff;
+  margin: 0;
+  display: none;
+  padding: 1em;
+  width: 100%;
+  @include text-shadow();
+  &.success {background-color: #61b832;}
+  &.info {background-color: #4ea5cd;}
+  &.warning {background-color: #eaaf51;}
+  &.error {background-color: #de4343;}
+  .hide-message {
+    background-color: rgba(100, 100, 100, 0.5);
+    cursor: pointer;
+    display: block;
+    float: right;
+    padding: 0 4px;
+    text-align: center;
+    text-shadow: none;
+    @include solid-border(1px, rgba(100, 100, 100, 0.2));
+    @include rounded-all(4px);
+    &:hover {
+      background-color: rgba(100, 100, 100, 0.6);
+    }
+  }
+  a {
+    color: #fff;
+    text-decoration: underline;
+    &:hover {
+      color: $gray-light;
+    }
+  }
+  .krumo-root {
+    color: $black-22;
+    @include text-shadow(0px, 0px, 0px, #000);
+    a {
+      color: #000;
+    }
+  }
+}
+
+/**
+ * Testimonials
+ */
+.bean-testimonial {
+  text-align: center;
+  img {
+    margin: auto;
+  }
+}
+
+/**
+ * overrides
+ */
+.front h1,
+.front #navigation-secondary .secondary-links {display: none;}
 
 
 

@@ -44,8 +44,6 @@
 #navigation-secondary {
   @media (max-width: 767px) {
     ul.main-menu {
-      display: block;
-      margin: -6px 0 36px;
       li {
         clear: both;
         display: block;
@@ -54,3 +52,86 @@
     }
   }
 }
+
+/**
+ * Feature Sliders
+ */
+.bean-feature {
+  .group-slide-tab {
+    @media (max-width: 700px) {
+      .field-name-field-slide-title {
+        font-size: $small;
+        line-height: 13px;
+      }
+    }
+  }
+}
+
+/**
+ * Wanderers
+ */
+.wanderer-outer {
+  .wanderer {
+    @media (max-width: 1020px) {
+      top: 20%;
+      width: 60%;
+    }
+    @media (max-width: 900px) {
+      top: 10%;
+      width: 80%;
+    }
+    @media (max-width: 720px) {
+      font-size: $small;
+      line-height: $base;
+      top: 5%;
+      width: 90%;
+    }
+  }
+}
+
+/**
+ * BI & AP Headers
+ */
+.node-program-or-initiative {
+  .wanderer-outer {
+    .wanderer {
+      @media (max-width: 720px) {
+        top: 15%;
+        .margin-bottom {
+          margin-bottom: 10px;
+        }
+        .padding-all {
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * 3 Column
+ */
+.divide-3 {
+  .divide {
+    @media (max-width: 720px) {
+      clear: both;
+      float: none;
+      padding-top: 20px;
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

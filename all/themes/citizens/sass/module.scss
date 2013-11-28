@@ -8,9 +8,23 @@
 .zebra {
   &:nth-child(odd) {
     background-color: $tan-light;
+    &.reverse-zebra {
+      background-color: $white;
+    }
   }
   &:nth-child(even) {
     background-color: $white;
+    &.reverse-zebra {
+      background-color: $tan-light;
+    }
+  }
+}
+.field-name-field-included-blocks-below {
+  .views-row {
+    padding: 20px $percentage-150;
+    &.views-row-even {
+      background-color: $tan-light;
+    }
   }
 }
 
@@ -28,14 +42,21 @@
   color: $black-30;
   display: inline-block;
   font-size: $medium-small;
-  padding: 15px 26px;
+  padding: 0.6em 26px;
+  text-transform: uppercase;
   &:hover {
     border-width: 1px 1px 2px 1px;
   }
   &:active {
     border-width: 3px 0px 0px 2px;
   }
+  &.center-blue-button {
+    background-color: $blue1;
+    color: $white;
+    margin: 20px auto;
+  }
 }
+
 
 /**
  * Inline images
@@ -85,6 +106,17 @@
 }
 
 /**
+ * Tri-color
+ * Since there's no way to do this with CSS, we just make them all blue while
+ * we wait for the JS to recolor them
+ */
+.tri-color-outer {
+  .tri-color {
+    color: $blue1;
+  }
+}
+
+/**
  * Admin
  */
 /* Tabs */
@@ -103,6 +135,71 @@ ul.tabs {
         border: 0;
         color: $white;
       }
+    }
+  }
+}
+
+/**
+ * Vertical center
+ */
+.vc-outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.vc-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/**
+ * Jump menu region
+ */
+.region-jump-menu {
+  h3 {
+    background-color: $black-30;
+    color: $white;
+    cursor: pointer;
+    line-height: 1em;
+    margin: 0;
+    position: absolute;
+    right: 0px;
+    top: -24px;
+    @include rounded(bottom, left, 3px);
+    @include rounded(bottom, right, 3px);
+    @include rotate-2d(180);
+    &.rotate-0 {
+      @include rotate-2d(0);
+      @include rounded(top, left, 3px);
+      @include rounded(top, right, 3px);
+    }
+  }
+  ul {
+    @include rounded(bottom, left, 3px);
+    @include rounded(bottom, right, 3px);
+    @include rounded(top, left, 3px);
+    li {
+      a {
+        display: block;
+        padding: 6px 20px;
+        &:hover {
+          background-color: $blue1;
+        }
+        &:first-child {
+          @include rounded(top, left, 3px);
+        }
+        &:last-child {
+          @include rounded(bottom, left, 3px);
+          @include rounded(bottom, right, 3px);
+        }
+      }
+    }
+    &.jm-open {
+      display: block;
+    }
+    &.jm-close {
+      display: none;
     }
   }
 }

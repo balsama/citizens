@@ -23,10 +23,54 @@
  * Secondary menu
  */
 @media (max-width: 767px) {
-  #navigation-secondary ul.main-menu {
+  #navigation-secondary ul.main-menu li {
+    clear: both;
     display: block;
-    margin: -6px 0 36px; }
-    #navigation-secondary ul.main-menu li {
-      clear: both;
-      display: block;
-      padding: 0; } }
+    padding: 0; } }
+
+/**
+ * Feature Sliders
+ */
+@media (max-width: 700px) {
+  .bean-feature .group-slide-tab .field-name-field-slide-title {
+    font-size: 0.722em;
+    line-height: 13px; } }
+
+/**
+ * Wanderers
+ */
+@media (max-width: 1020px) {
+  .wanderer-outer .wanderer {
+    top: 20%;
+    width: 60%; } }
+@media (max-width: 900px) {
+  .wanderer-outer .wanderer {
+    top: 10%;
+    width: 80%; } }
+@media (max-width: 720px) {
+  .wanderer-outer .wanderer {
+    font-size: 0.722em;
+    line-height: 1.125em;
+    top: 5%;
+    width: 90%; } }
+
+/**
+ * BI & AP Headers
+ */
+@media (max-width: 720px) {
+  .node-program-or-initiative .wanderer-outer .wanderer {
+    top: 15%; }
+    .node-program-or-initiative .wanderer-outer .wanderer .margin-bottom {
+      margin-bottom: 10px; }
+    .node-program-or-initiative .wanderer-outer .wanderer .padding-all {
+      padding: 10px; } }
+
+/**
+ * 3 Column
+ */
+@media (max-width: 720px) {
+  .divide-3 .divide {
+    clear: both;
+    float: none;
+    padding-top: 20px;
+    width: 100%; } }

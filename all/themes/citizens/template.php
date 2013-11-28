@@ -125,6 +125,12 @@ function citizens_preprocess_page(&$vars, $hook) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
     $vars['theme_hook_suggestions'][] = "page__node__" . $vars['node']->nid;
   }
+
+  // Add sticky scroll JS if there is someting in the jump menu region
+  if (!empty($vars['page']['jump_menu'])) {
+    drupal_add_js(drupal_get_path('theme', 'citizens') . '/js/stickysidebar.jquery.min.js');
+    drupal_add_js(array('jump_menu' => array('sticky' => true)), 'setting');
+  }
 }
 
 function citizens_preprocess_node(&$vars) {
@@ -307,3 +313,140 @@ function citizens_menu_tree__main_menu($variables){
     return "<ul class='inline font-small main-menu no-wrap'>\n" . $variables['tree'] ."</ul>\n";
 }
 
+/**
+ * Override standard message output. Adds `heading` class.
+ */
+function citizens_status_messages($variables) {
+  $display = $variables['display'];
+  $output = '';
+
+  $status_heading = array(
+    'status' => t('Status message'),
+    'error' => t('Error message'),
+    'warning' => t('Warning message'),
+  );
+  foreach (drupal_get_messages($display) as $type => $messages) {
+    $output .= "<div class=\"messages $type heading\">\n";
+    if (!empty($status_heading[$type])) {
+      $output .= '<h2 class="element-invisible">' . $status_heading[$type] . "</h2>\n";
+    }
+    if (count($messages) > 1) {
+      $output .= " <ul>\n";
+      foreach ($messages as $message) {
+        $output .= '  <li>' . $message . "</li>\n";
+      }
+      $output .= " </ul>\n";
+    }
+    else {
+      $output .= $messages[0];
+    }
+    $output .= "</div>\n";
+  }
+  return $output;
+}
+
+/**
+ * Overrides theme_field()
+ * Remove the hard coded classes so we can add them in preprocess functions.
+ */
+function citizens_field($variables) {
+  $output = '';
+
+  // Render the label, if it's not hidden.
+  if (!$variables['label_hidden']) {
+    $output .= '<div ' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';
+  }
+
+  // Render the items.
+  $output .= '<div ' . $variables['content_attributes'] . '>';
+  foreach ($variables['items'] as $delta => $item) {
+    $output .= '<div ' . $variables['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
+  }
+  $output .= '</div>';
+
+  // Render the top-level DIV.
+  $output = '<div class="' . $variables['classes'] . '"' . $variables['attributes'] . '>' . $output . '</div>';
+
+  return $output;
+}
+
+/**
+ * Implements hook_preprocess_field()
+ */
+function citizens_preprocess_field(&$vars) {
+  $name = $vars['element']['#field_name'];
+  $bundle = $vars['element']['#bundle'];
+  $mode = $vars['element']['#view_mode'];
+  $classes = &$vars['classes_array'];
+  $title_classes = &$vars['title_attributes_array']['class'];
+  $content_classes = &$vars['content_attributes_array']['class'];
+  $item_classes = array();
+
+  /* Global field classes */
+  $classes[] = 'field-wrapper';
+  $title_classes[] = 'field-label';
+  $content_classes[] = 'field-items';
+  $item_classes[] = 'field-item';
+
+  /* Add specific classes to targeted fields */
+  switch ($mode) {
+    /* All teasers */
+    case 'teaser':
+      switch ($name) {
+        /* Teaser read more links */
+        case 'node_link':
+          $item_classes[] = 'more-link';
+          break;
+        /* Teaser descriptions */
+        case 'body':
+        case 'field_description':
+          $item_classes[] = 'description';
+          break;
+      }
+      break;
+  }
+
+  switch ($name) {
+    case 'field_header_copy' :
+      $color = field_get_items('node', $vars['element']['#object'], 'field_header_copy_background_col');
+      $classes[] = 'font-white color-background rounded padding-all';
+      $classes[] = $color[0]['value'];
+      break;
+
+    case 'field_status' :
+      $classes[] = 'color-background white rounded padding-all margin-bottom all-caps font-heavy center-contents';
+      break;
+
+    case 'field_teaser_thumbnail' :
+      $classes[] = 'f-left margin-right';
+      break;
+
+    case 'field_sections' :
+      $classes = array();
+      $content_classes = array();
+      $item_classes[] = 'default-padding zebra';
+      break;
+
+    case 'field_testimonial_source' :
+      $item_classes[] = 'emphasized';
+      break;
+
+    case 'field_quote' :
+      $item_classes[] = 'padding-tb-small';
+      break;
+
+    case 'field_btn_heading' :
+      $item_classes[] = 'font-huge font-light tri-color';
+      break;
+
+    case 'field_btn_description' :
+      $item_classes[] = 'font-small font-heavy';
+      break;
+  }
+
+  // Apply odd or even classes along with our custom classes to each item */
+  foreach ($vars['items'] as $delta => $item) {
+    $vars['item_attributes_array'][$delta]['class'] = $item_classes;
+    $vars['item_attributes_array'][$delta]['class'][] = $delta % 2 ? 'even' : 'odd';
+  }
+}

@@ -4,6 +4,7 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
+  <link href='http://fonts.googleapis.com/css?family=EB+Garamond|Oxygen:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <?php print $scripts; ?>
   <meta name="viewport" content="width=device-width">
 </head>
@@ -11,6 +12,5 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-  <link href='http://fonts.googleapis.com/css?family=EB+Garamond|Oxygen:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </body>
 </html>

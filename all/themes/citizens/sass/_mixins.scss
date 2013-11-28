@@ -17,7 +17,7 @@
   -moz-border-radius-#{$vert}#{$horz}: $radius;
   -webkit-border-#{$vert}-#{$horz}-radius: $radius;
 }
-@mixin rounded-all($radius: 8px) {
+@mixin rounded-all($radius: 6px) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
@@ -51,8 +51,16 @@
 // rotate
 @mixin rotate-2d($deg: 90) {
   transform: rotate(#{$deg}deg);
-  -ms-transform: rotate(#{$deg}deg); /* IE 9 */
-  -webkit-transform: rotate(#{$deg}deg); /* Safari and Chrome */
+  -ms-transform: rotate(#{$deg}deg);
+  -webkit-transform: rotate(#{$deg}deg);
+  -moz-transform: rotate(#{$deg}deg);
+  -o-transform: rotate(#{$deg}deg);
+}
+
+// transition
+@mixin transition-all($duration: 1) {
+  transition: all #{$duration}s;
+  -webkit-transition: all #{$duration}s; /* Safari */
 }
 
 // Override box model

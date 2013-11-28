@@ -1,0 +1,129 @@
+<?php
+/**
+ * @file implements hook_image_styles_alter to override the default image
+ * styles provided by the image module by default. We want to use the names
+ * "Large", "Medium" and "Thumbnail" and want to define them in code, but don't
+ * like the default styles themselves.
+ */
+
+/**
+ * Implements hook_image_styles_alter().
+ */
+function imagestyleoverride_image_styles_alter(&$styles) {
+  $styles['thumbnail'] = array(
+    'label' => 'Thumbnail (100xVar)',
+    'effects' => array(
+      array(
+        'name' => 'image_scale',
+        'label' => 'Scale',
+        'data' => array(
+          'width' => 100,
+          'height' => null,
+          'upscale' => 1,
+        ),
+        'weight' => 0,
+      ),
+    ),
+    'name' => 'thumbnail',
+    'storage' => IMAGE_STORAGE_DEFAULT,
+  );
+
+  $styles['medium'] = array(
+    'label' => 'Medium (410xVar)',
+    'effects' => array(
+      array(
+        'name' => 'image_scale',
+        'label' => 'Scale',
+        'data' => array(
+          'width' => 410,
+          'height' => null,
+          'upscale' => 1,
+        ),
+        'weight' => 0,
+      ),
+    ),
+    'name' => 'medium',
+    'storage' => IMAGE_STORAGE_DEFAULT,
+  );
+
+  $styles['large'] = array(
+    'label' => 'Large (850xVar)',
+    'effects' => array(
+      array(
+        'name' => 'image_scale',
+        'label' => 'Scale',
+        'data' => array(
+          'width' => 850,
+          'height' => null,
+          'upscale' => 1,
+        ),
+        'weight' => 0,
+      ),
+    ),
+    'name' => 'large',
+    'storage' => IMAGE_STORAGE_DEFAULT,
+  );
+
+  return $styles;
+}
+
+/**
+ *
+ * Rather than creating a feature module, we also create two new styles here in
+ * addition to overriding the three defaults.
+ */
+function imagestyleoverride_image_default_styles() {
+  $styles['small'] = array(
+    'label' => 'Small (250xVar)',
+    'effects' => array(
+      array(
+        'name' => 'image_scale',
+        'label' => 'Scale',
+        'data' => array(
+          'width' => 250,
+          'height' => null,
+          'upscale' => 1,
+        ),
+        'weight' => 0,
+      ),
+    ),
+    'name' => 'small',
+    'storage' => IMAGE_STORAGE_DEFAULT,
+  );
+
+  $styles['small-cropped'] = array(
+    'label' => 'Small - cropped',
+    'effects' => array(
+      array(
+        'name' => 'image_scale_and_crop',
+        'label' => 'Scale and Crop',
+        'data' => array(
+          'width' => 250,
+          'height' => 150,
+        ),
+        'weight' => 0,
+      ),
+    ),
+    'name' => 'small-cropped',
+    'storage' => IMAGE_STORAGE_DEFAULT,
+  );
+
+  $styles['square'] = array(
+    'label' => 'Square (180x180)',
+    'effects' => array(
+      array(
+        'name' => 'image_scale_and_crop',
+        'label' => 'Scale and Crop',
+        'data' => array(
+          'width' => 180,
+          'height' => 180,
+        ),
+        'weight' => 0,
+      ),
+    ),
+    'name' => 'square',
+    'storage' => IMAGE_STORAGE_DEFAULT,
+  );
+
+  return $styles;
+}

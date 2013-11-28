@@ -1,0 +1,73 @@
+<?php
+
+function jumpmenu_block_info() {
+  $block['jump_menu'] = array(
+    'info' => t('Jump Menu'),
+  );
+
+  return $block;
+}
+
+function jumpmenu_block_view($delta) {
+  $block = array();
+  if ((arg(0) == 'node') && (is_numeric(arg(1)))) {
+    switch ($delta) {
+    case 'jump_menu':
+        $node = menu_get_object();
+        $menu = ($node->type == 'jump_page') ? jumpmenu_build_menu($node) : null;
+        $block['title'] = null;
+        $block['content'] = $menu;
+        break;
+    }
+  }
+  return $block;
+}
+
+function jumpmenu_build_menu($node) {
+  $field_sections = field_get_items('node', $node, 'field_sections');
+  $fcids = jumpmenu_get_fcid($field_sections);
+  $fcis = field_collection_item_load_multiple($fcids);
+  foreach ($fcis as $fci) {
+    $fcivs[] = field_get_items('field_collection_item', $fci, 'field_section_heading');
+  }
+  foreach ($fcivs as $fciv) {
+    $menu[] = l($fciv[0]['value'], $_GET['q'], array('fragment' => 'jump-menu-' . jumpmenu_id_safe($fciv[0]['value'])));
+  }
+  return theme('item_list', array('items' => $menu, 'title' => '<span class="fonticon" aria-hidden="true" data-icon="|"></span>', 'type' => 'ul', 'attributes' => array('class' => 'white-on-black heading font-small all-caps no-m-no-bul padding-all jm-open')));
+}
+
+function jumpmenu_get_fcid($field_sections) {
+  foreach($field_sections as $field_section) {
+    $fcids[] = $field_section['value'];
+  }
+  return $fcids;
+}
+
+/**
+ * Converts a string to a suitable html ID attribute.
+ *
+ * http://www.w3.org/TR/html4/struct/global.html#h-7.5.2 specifies what makes a
+ * valid ID attribute in HTML. This function:
+ *
+ * - Ensure an ID starts with an alpha character by optionally adding an 'n'.
+ * - Replaces any character except A-Z, numbers, and underscores with dashes.
+ * - Converts entire string to lowercase.
+ *
+ * @param $string
+ *  The string
+ * @return
+ *  The converted string
+ *
+ * NOTE: This is a duplicate of citizens_id_safe in the citizens theme template
+ * file. Until we can make modules dependant on themes and vice versa, there is
+ * no guarantee that these functions will be in synch.
+ */
+function jumpmenu_id_safe($string) {
+  // Replace with dashes anything that isn't A-Z, numbers, dashes, or underscores.
+  $string = strtolower(preg_replace('/[^a-zA-Z0-9_-]+/', '-', $string));
+  // If the first character is not a-z, add 'n' in front.
+  if (!ctype_lower($string{0})) { // Don't use ctype_alpha since its locale aware.
+    $string = 'id'. $string;
+  }
+  return $string;
+}

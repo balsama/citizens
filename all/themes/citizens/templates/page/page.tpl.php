@@ -19,6 +19,8 @@
     </div>
   </div><!-- /#navigation-primary -->
 
+  <?php print $messages; ?>
+
   <?php if ($tabs): ?>
     <div class="tabs heading all-caps font-small">
       <?php print render($tabs); ?>
@@ -27,8 +29,10 @@
 
   <div id="navigation-secondary" class="navigation menu">
     <div class="inner naviagation-secondary-inner center-contents">
-      <h1 class="font-normal"><?php print $title; ?></h1>
-      <?php print render($page['navigation_secondary']); ?>
+      <h1 class=""><?php print $title; ?></h1>
+      <div class="secondary-links">
+        <?php print render($page['navigation_secondary']); ?>
+      </div>
     </div>
   </div><!-- /#navigation-secondary -->
 
@@ -42,8 +46,6 @@
 
   <div id="main" class="clearfix">
 
-    <?php print $messages; ?>
-
     <?php if ($page['content_top']) : ?>
     <div id="content-top">
       <div class="inner content-top-inner">
@@ -54,12 +56,15 @@
 
     <div id="menu-callback">
       <?php print render($page['content']) ?>
+      <?php if ($page['jump_menu']) : ?>
+        <?php print render($page['jump_menu']); ?>
+      <?php endif; ?>
     </div> <!-- /#menu-callback -->
 
     <?php if ($page['content_bottom']) : ?>
     <div id="content-bottom">
       <div class="inner content-bottom-inner">
-        <?php print render($page['content-bottom']); ?>
+        <?php print render($page['content_bottom']); ?>
       </div>
     </div> <!-- /#content-bottom -->
     <?php endif; ?>

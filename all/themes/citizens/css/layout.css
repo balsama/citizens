@@ -7,6 +7,9 @@
   min-width: 430px;
   position: relative; }
 
+#menu-callback {
+  position: relative; }
+
 .default-padding {
   padding: 20px 13.04348%;
   width: 100%; }
@@ -18,8 +21,29 @@
 .padding-tb {
   padding: 20px 0; }
 
+.padding-tb-small {
+  padding: 10px 0; }
+
+.padding-tb-large {
+  padding: 40px 0; }
+
 .padding-all {
   padding: 20px; }
+
+.margin-bottom {
+  margin-bottom: 20px; }
+
+.margin-all {
+  margin: 20px; }
+
+.margin-auto {
+  margin: auto; }
+
+.margin-right {
+  margin-right: 20px; }
+
+.margin-yb {
+  margin: 20px 0; }
 
 .col-2-grid-outer .field-item {
   margin: 10px 0;
@@ -30,3 +54,73 @@
   .col-2-grid-outer .field-item:nth-child(even) {
     clear: right;
     float: right; }
+
+/**
+ * wanderers. These are elements that take up the right half of their parent on
+ * desktop and then slowly wander up and to the left for smaller screen sizes.
+ */
+.wanderer-outer {
+  position: relative; }
+  .wanderer-outer .wanderer {
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    width: 45%;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    /* Safari */ }
+
+/**
+ * Floats and percentages
+ */
+.f-left {
+  float: left; }
+
+.f-right {
+  float: right; }
+
+.f-none {
+  float: none; }
+
+.p-70 {
+  width: 70%; }
+
+.p-30 {
+  width: 30%; }
+
+.inline {
+  display: inline-block; }
+
+.h-100 {
+  height: 100%; }
+
+.table {
+  display: table;
+  width: 100%; }
+
+.table-cell {
+  display: table-cell; }
+
+/**
+ * 3 Column Stuff
+ */
+.divide-3 {
+  padding: 0 5.65217%; }
+  .divide-3:before, .divide-3:after {
+    content: "";
+    display: table; }
+  .divide-3:after {
+    clear: both; }
+  .divide-3 .divide {
+    float: left;
+    padding: 0 1%;
+    width: 33.33333%; }
+
+/**
+ * Jump menu position
+ */
+.region-jump-menu {
+  position: absolute;
+  right: 0px;
+  top: 66px;
+  width: auto; }

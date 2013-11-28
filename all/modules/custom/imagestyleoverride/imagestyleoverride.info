@@ -1,0 +1,7 @@
+name = "Image Style Override"
+description = "Overrides the default Medium, Large and Thumbnail image styles."
+package = Other
+dependencies[] = image
+core = 7.x
+version = "7.x-1.0"
+
