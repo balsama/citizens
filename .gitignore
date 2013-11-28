@@ -4,3 +4,7 @@
 # Ignore paths that contain user-generated content.
 */files
 */private
+
+# OS X
+*.swp
+._.*
