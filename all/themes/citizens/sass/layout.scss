@@ -21,7 +21,7 @@
     padding: 20px;
   }
   #navigation-primary & {
-    padding: 10px 20px;
+    padding: 0px 20px;
   }
 }
 .padding-tb {
@@ -35,6 +35,12 @@
 }
 .padding-all {
   padding: 20px;
+}
+.padding-bottom {
+  padding-bottom: 20px;
+}
+.padding-bottom-large {
+  padding-bottom: 40px;
 }
 .margin-bottom {
   margin-bottom: 20px;
@@ -50,6 +56,13 @@
 }
 .margin-yb {
   margin: 20px 0;
+}
+.margin-negative-bottom {
+  margin-bottom: -0.8em;
+}
+
+.display-block {
+  display: block;
 }
 
 .col-2-grid-outer {
@@ -100,8 +113,16 @@
 .table-cell {display: table-cell;}
 
 /**
- * 3 Column Stuff
+ * 3 & 4 Column Stuff
  */
+.divide-2 {
+  @include clearfix;
+  .divide {
+    float: left;
+    padding: 0 1%;
+    width: percentage((($width - 130) / 2) / ($width - 130));
+  }
+}
 .divide-3 {
   padding: 0 percentage(65 / $width);
   @include clearfix;
@@ -111,13 +132,30 @@
     width: percentage((($width - 130) / 3) / ($width - 130));
   }
 }
+.divide-4 {
+  padding: 0 percentage(65 / $width);
+  @include clearfix;
+  .divide {
+    float: left;
+    padding: 0 1%;
+    width: percentage((($width - 130) / 4) / ($width - 130));
+  }
+}
 
 /**
  * Jump menu position
  */
 .region-jump-menu {
+  padding-top: 66px;
   position: absolute;
   right: 0px;
-  top: 66px;
+  top: 0px;
   width: auto;
+}
+
+/**
+ * Webforms
+ */
+.node-webform {
+  padding: 20px $percentage-250 20px;
 }

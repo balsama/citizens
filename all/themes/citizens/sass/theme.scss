@@ -25,6 +25,9 @@
 .header-with-icon {
   margin-top: 36px;
   position: relative;
+  .field-name-field-dek {
+    margin-top: 1.8em;
+  }
 }
 
 /* Jump page context */
@@ -42,11 +45,14 @@
  */
 ul.menu.sf-menu-top-links {
   li {
-    padding: 0 10px;
+    padding: 0 8px;
     a {
       &.active {
         color: $gray-light;
       }
+    }
+    &.menuparent {
+      cursor: pointer;
     }
   }
   ul {
@@ -66,7 +72,7 @@ ul.menu.sf-menu-top-links {
   float: left;
   font-size: 0;
   height: 100%;
-  margin-right: 40px;
+  padding: 10px 0;
   width: 25%;
   img#logo {
     width: 100%;
@@ -76,73 +82,122 @@ ul.menu.sf-menu-top-links {
 /**
  * Primary Links
  */
-#navigation-primary .navigation-primary-inner {
-  height: 94px;
-  overflow: hidden;
-  ul.main-menu {
-    display: block;
-    margin-top: 25px;
-    z-index: 5;
-    li {
-      a {
-        padding: 9px 3%;
-        white-space: nowrap;
-        @include rounded-all(4px);
-        &:hover {
-          color: $gray-light;
-        }
-        &.active {
-          background-color: $blue;
+/* Desktop Menu */
+.region-navigation-primary {
+  float: left;
+  padding-left: 3%;
+  width: 75%;
+  ul.sf-menu > li {
+    //margin-top: 18px;
+    > a {
+      line-height: 13px;
+      margin: 28px 0;
+      padding: 10px 20px;
+      @include rounded-all();
+    }
+    &.active-trail {
+      > a {
+        background-color: $blue1;
+      }
+    }
+    &.sfHover > ul {
+      // Dropdowns
+      background-color: $white;
+      margin: 57px 0 0 10px;
+      width: auto;
+      @include box-shadow(0px, 1px, 10px, #333);
+      li {
+        a {
+          color: $black-30;
+          display: block;
+          font-weight: 600;
+          padding: 20px 40px;
+          white-space: nowrap;
           &:hover {
-            color: $white;
+            background-color: $tan-light;
+            color: $blue1;
+          }
+          span {
+            display: block;
+            float: left;
+            font-size: 30px;
+            line-height: 13px;
+            margin: 0 5px 0 -30px;
+            position: relative;
+            text-align: center;
+            width: 36px;
           }
         }
       }
+    }
+    &.sf-item-4 > ul {
+      left: -40%;
+      //width: 240px;
+    }
+  }
+}
+body.i18n-es ul.sf-menu > li.sf-item-4 > ul {
+  left: -93px;
+}
+
+/* Mobile slide in */
+.main-drop-down {
+  background-color: $black-30;
+  height: 100%;
+  padding-top: 45px;
+  position: fixed;
+  right: -240px;
+  top: 0px;
+  width: 240px;
+  z-index: 499; // SF Module (annoyingly) uses 498 for z-index
+  @include transition-all(0.3);
+  ul {
+    ul {
+      display: none;
+    }
+    li {
+      display: block;
       &.active-trail {
         a {
-          background-color: $blue;
+          background-color: $blue1;
         }
       }
-      ul {
-        display: none;
+      a {
+        clear: both;
+        display: block;
+        float: none;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin: 4px 10px;
+        padding: 10px 20px;;
       }
     }
   }
-  #block-system-main-menu {
-    background-color: $black-30;
-    float: left;
-    padding-bottom: 8px;
-    position: relative;
-    z-index: 5;
-  }
-
-  /* Drop down */
-  .main-drop-down {
-    background-color: $black-30;
-    display: none;
-    left: 0px;
-    position: absolute;
-    top: 146px;
-    width: 100%;
-    z-index: 10;
-    @include box-shadow(0px, 9px, 10px, #222);
-    ul {
-      li {
-        a {
-          clear: both;
-          display: block;
-          float: none;
-        }
+}
+#main-drop-down-toggle {
+  background-color: $black-22;
+  display: none;
+  font-size: 40px;
+  height: 100%;
+  padding: 30px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 1;
+  @include transition-all(0.3);
+}
+#page {
+  &.with-mobile-menu {
+    @include transition-all(0.3);
+    &.mobile-menu-open {
+      position: relative;
+      .main-drop-down {
+        right: 0px;
+      }
+      #main-drop-down-toggle {
+        right: 240px;
       }
     }
-  }
-  #main-drop-down-toggle {
-    display: block;
-    font-size: 40px;
-    left: 360px;
-    position: absolute;
-    top: 84px;
-    z-index: 1;
   }
 }
 
@@ -163,6 +218,14 @@ ul.menu.sf-menu-top-links {
           &:hover {
             color: $blue;
           }
+          span {
+            display: none;
+          }
+        }
+        &.active-trail {
+          a {
+            color: $blue;
+          }
         }
       }
     }
@@ -173,28 +236,51 @@ ul.menu.sf-menu-top-links {
  * Bottom Links
  */
 #block-menu-menu-bottom-links {
-  padding: 20px 0 40px 40px;
+  padding: 20px 40px 40px 40px;
   ul {
+    margin: 0;
     li {
       display: block;
       float: left;
-      width: ($width / 4.3) + px;
+      margin: 0;
+      padding: 0 0.5em;
+      width: 25%;
       > ul {
-        padding: 10px 0 0;
+        margin: 14px 0 0;
+        padding: 0;
         li {
-          display: list-item;
+          display: block;
           float: none;
           list-style-type: none;
           list-style-image: none;
-          margin-left: 0;
+          margin: 0;
+          padding: 0;
+          width: 100%;
           a {
             color: $gray;
+            display: block;
             &:hover {
               color: $white;
             }
           }
         }
       }
+    }
+  }
+}
+
+/**
+ * Generic Menus (inline ULs)
+ */
+.footer-bottom-inner ul.menu {
+  margin: 0;
+  li {
+    float: left;
+    list-style: none;
+    margin: 0 1em;
+    a {
+      display: inline-block;
+      margin: 0;
     }
   }
 }
@@ -304,6 +390,7 @@ div.caption-center .caption-inner {
       }
       .field-name-field-slide-cta-copy {
         font-family: 'EB Garamond', serif;
+        margin-bottom: 0.6em;
       }
     }
   }
@@ -379,6 +466,37 @@ div.messages {
  */
 .front h1,
 .front #navigation-secondary .secondary-links {display: none;}
+
+.node-unpublished:before {
+  content: 'UNPUBLISHED';
+}
+
+/**
+ * Views grouping limit + Views responsive grid overrides
+ */
+.views-grouping-limit-responsive {
+  &:first-child {
+    h2 {
+      margin-top: 0;
+    }
+  }
+  h2 {
+    padding-top: 0.3em;
+  }
+}
+
+/**
+ * Artucle full overrides
+ */
+.node-in-the-news-item.node-full {
+  .field-name-field-show-published-date {
+    text-align: center;
+    margin-bottom: -1.8em;
+    margin-top: 2em;
+  }
+}
+
+
 
 
 

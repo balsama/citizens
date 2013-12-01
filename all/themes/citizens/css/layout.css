@@ -16,7 +16,7 @@
   #header .default-padding {
     padding: 20px; }
   #navigation-primary .default-padding {
-    padding: 10px 20px; }
+    padding: 0px 20px; }
 
 .padding-tb {
   padding: 20px 0; }
@@ -29,6 +29,12 @@
 
 .padding-all {
   padding: 20px; }
+
+.padding-bottom {
+  padding-bottom: 20px; }
+
+.padding-bottom-large {
+  padding-bottom: 40px; }
 
 .margin-bottom {
   margin-bottom: 20px; }
@@ -44,6 +50,12 @@
 
 .margin-yb {
   margin: 20px 0; }
+
+.margin-negative-bottom {
+  margin-bottom: -0.8em; }
+
+.display-block {
+  display: block; }
 
 .col-2-grid-outer .field-item {
   margin: 10px 0;
@@ -66,9 +78,9 @@
     right: 5%;
     top: 30%;
     width: 45%;
-    transition: all 1s;
-    -webkit-transition: all 1s;
-    /* Safari */ }
+    transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease; }
 
 /**
  * Floats and percentages
@@ -102,8 +114,18 @@
   display: table-cell; }
 
 /**
- * 3 Column Stuff
+ * 3 & 4 Column Stuff
  */
+.divide-2:before, .divide-2:after {
+  content: "";
+  display: table; }
+.divide-2:after {
+  clear: both; }
+.divide-2 .divide {
+  float: left;
+  padding: 0 1%;
+  width: 50%; }
+
 .divide-3 {
   padding: 0 5.65217%; }
   .divide-3:before, .divide-3:after {
@@ -116,11 +138,30 @@
     padding: 0 1%;
     width: 33.33333%; }
 
+.divide-4 {
+  padding: 0 5.65217%; }
+  .divide-4:before, .divide-4:after {
+    content: "";
+    display: table; }
+  .divide-4:after {
+    clear: both; }
+  .divide-4 .divide {
+    float: left;
+    padding: 0 1%;
+    width: 25%; }
+
 /**
  * Jump menu position
  */
 .region-jump-menu {
+  padding-top: 66px;
   position: absolute;
   right: 0px;
-  top: 66px;
+  top: 0px;
   width: auto; }
+
+/**
+ * Webforms
+ */
+.node-webform {
+  padding: 20px 21.73913% 20px; }

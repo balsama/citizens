@@ -19,7 +19,14 @@ function localemenu_translated_menu_link_alter(&$item, $map) {
     $links = language_negotiation_get_switch_links('language', $path);
 
     $pick = ($item['link_title'] == 'Español') ? 'es' : 'en';
-    $item['href'] = (isset($links->links[$pick]['href'])) ? ($links->links[$pick]['href']) : '';
+
+    if ($links->links['en']['href'] == $links->links['es']['href']) {
+      // If the content isn't translatable, link to the homepage
+      $item['href'] = '<front>';
+    }
+    else {
+      $item['href'] = $links->links[$pick]['href'];
+    }
 
     $item['localized_options']['langcode'] = $pick;
     $item['localized_options']['attributes']['class'][] = 'language-link';

@@ -137,6 +137,11 @@ function citizens_preprocess_node(&$vars) {
   // Add a striping class.
   $vars['classes_array'][] = 'node-' . $vars['zebra'];
 
+  // Add a class to full nodes so we don't need to override things obn teasers
+  if ($vars['view_mode'] == 'full') {
+    $vars['classes_array'][] = 'node-full';
+  }
+
   // Add $unpublished variable.
   $vars['unpublished'] = (!$vars['status']) ? TRUE : FALSE;
 
@@ -371,7 +376,75 @@ function citizens_field($variables) {
 }
 
 /**
- * Implements hook_preprocess_field()
+ * Implements hook_form_alter().
+ *
+ * Adds classes to all form submit buttons.
+ */
+function citizens_form_alter(&$form, &$form_state, $form_id) {
+  if (!empty($form['actions']) && $form['actions']['submit']) {
+    $form['actions']['submit']['#attributes'] = array('class' => array('button', 'center-blue-button', 'heading'));
+  }
+}
+
+/**
+ * Overrides theme_form_element().
+ *
+ * Adds classes to form labels.
+ */
+function citizens_form_element_label($variables) {
+  $element = $variables['element'];
+  // This is also used in the installer, pre-database setup.
+  $t = get_t();
+
+  // If title and required marker are both empty, output no label.
+  if ((!isset($element['#title']) || $element['#title'] === '') && empty($element['#required'])) {
+    return '';
+  }
+
+  // If the element is required, a required marker is appended to the label.
+  $required = !empty($element['#required']) ? theme('form_required_marker', array('element' => $element)) : '';
+
+  $title = filter_xss_admin($element['#title']);
+
+  $attributes = array();
+  // Style the label as class option to display inline with the element.
+  if ($element['#title_display'] == 'after') {
+    $attributes['class'] = 'option';
+  }
+  // Show label only to screen readers to avoid disruption in visual flows.
+  elseif ($element['#title_display'] == 'invisible') {
+    $attributes['class'] = 'element-invisible';
+  }
+
+  if (!empty($element['#id'])) {
+    $attributes['for'] = $element['#id'];
+  }
+
+  $attributes['class'] = 'heading font-light font-medium-small';
+
+  // The leading whitespace helps visually separate fields from inline labels.
+  return ' <label' . drupal_attributes($attributes) . '>' . $t('!title !required', array('!title' => $title, '!required' => $required)) . "</label>\n";
+}
+
+/**
+ * Overrides theme_form_required_marker().
+ *
+ * Adds element-invisible class to the asterisk.
+ */
+function citizens_form_required_marker($variables) {
+  // This is also used in the installer, pre-database setup.
+  $t = get_t();
+  $attributes = array(
+    'class' => 'form-required element-invisible',
+    'title' => $t('This field is required.'),
+  );
+  return '<span' . drupal_attributes($attributes) . '>*</span>';
+}
+
+/**
+ * Implements hook_preprocess_field().
+ *
+ * Allows us to easily add classes to individual fields and their wrappers.
  */
 function citizens_preprocess_field(&$vars) {
   $name = $vars['element']['#field_name'];
@@ -442,6 +515,14 @@ function citizens_preprocess_field(&$vars) {
     case 'field_btn_description' :
       $item_classes[] = 'font-small font-heavy';
       break;
+
+    case 'field_show_published_date' :
+      $item_classes[] = 'font-gray-medium heading font-small margin-negative-bottom';
+      break;
+
+    case 'field_donate_mail' :
+      $item_classes[] = 'padding-bottom';
+      break;
   }
 
   // Apply odd or even classes along with our custom classes to each item */
@@ -450,3 +531,4 @@ function citizens_preprocess_field(&$vars) {
     $vars['item_attributes_array'][$delta]['class'][] = $delta % 2 ? 'even' : 'odd';
   }
 }
+

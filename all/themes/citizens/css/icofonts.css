@@ -107,3 +107,6 @@
 
 .icon-arrow-down:before {
   content: "\7c"; }
+
+.icon-feed:before {
+  content: "\7d"; }

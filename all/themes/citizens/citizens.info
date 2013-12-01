@@ -16,7 +16,7 @@ regions[jump_menu] = Jump menu
 regions[content_bottom] = Content bottom
 regions[feature_bottom] = Feature bottom
 regions[footer] = Footer
-regions[page_bottom] = Page bottom
+regions[footer_bottom] = Footer bottom
 
 features[] = name
 features[] = search
@@ -35,6 +35,7 @@ stylesheets[print][] = css/print.css
 
 ; Scripts
 scripts[] = js/modernizr.js
+scripts[] = js/jquery.touchSwipe.min.js
 
 settings[citizens_tabs] = 1
 settings[citizens_breadcrumb] = 1
@@ -75,4 +76,5 @@ fonticon[contact_us] = '&#x79;'
 fonticon[consumer_resources] = '&#x7a;'
 fonticon[about_citizens] = '&#x7b;'
 fonticon[arrow-down] = '&#x7c;'
+fonticon[feed] = '&#x7d;'
 

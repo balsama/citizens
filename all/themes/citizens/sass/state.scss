@@ -9,15 +9,17 @@
  * Main menu
  */
 #navigation-primary .navigation-primary-inner {
-  @media (max-width: 1149px) and (min-width: 768px) {
-    ul.main-menu {
-      display: block;
-      margin-top: 25px;
-      z-index: 5;
-      li {
-        a {
-          font-size: $small;
-          padding: 9px 2.4%;
+  @media (max-width: 900px) {
+    .region-navigation-primary ul.sf-menu {
+      font-size: 12px;
+      > li {
+        > a {
+          padding: 10px 16px;
+          @media (max-width: 850px) {
+            font-size: 11px;
+            line-height: 13px;
+            padding: 10px 4px;
+          }
         }
       }
     }
@@ -26,15 +28,22 @@
     #logo-container {
       width: 298px;
     }
-  }
-  @media (max-width: 1149px) and (min-width: 950px) {
-    ul.main-menu {
-      li {
-        a {
-          font-size: 11px;
-        }
-      }
+    .region-navigation-primary ul.sf-menu {
+      display: none;
     }
+    #main-drop-down-toggle {
+      display: block;
+    }
+  }
+  ul.sf-menu > li.sfHover > ul {
+    @media (max-width: 900px) {
+      margin-top: 59px;
+    }
+  }
+}
+@media (max-width: 1010px) {
+  .region-navigation-primary ul.sf-menu > li.sf-item-4 > ul {
+    left: -90%;
   }
 }
 
@@ -42,12 +51,46 @@
  * Secondary menu
  */
 #navigation-secondary {
-  @media (max-width: 767px) {
+  @media (max-width: 800px) {
     ul.main-menu {
       li {
         clear: both;
         display: block;
         padding: 0;
+      }
+    }
+  }
+}
+
+/**
+ * Footer Links
+ */
+#block-menu-menu-bottom-links {
+  ul {
+    li {
+      @media (max-width: 767px) {
+        clear: both;
+        text-align: center;
+        width: 100%;
+        ul {
+          margin: 0 0 20px;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Page bottom menu
+ */
+.footer-bottom-inner {
+  ul {
+    li {
+      @media (max-width: 767px) {
+        clear: both;
+        display: block;
+        text-align: center;
+        width: 100%;
       }
     }
   }
@@ -108,6 +151,16 @@
   }
 }
 
+
+.divide-2 {
+  .divide {
+    @media (max-width: 480px) {
+      clear: both;
+      float: none;
+      width: 100%;
+    }
+  }
+}
 /**
  * 3 Column
  */
@@ -117,14 +170,84 @@
       clear: both;
       float: none;
       padding-top: 20px;
+      text-align: center;
       width: 100%;
+      img {
+        margin: auto;
+        width: 80%;
+      }
     }
   }
 }
 
+/**
+ * 4 Column
+ */
+.divide-4 {
+  @media (max-width: 800px) {
+    .views-column-3 {
+      clear: left;
+    }
+    .divide {
+      padding: 0 7%;
+      width: percentage((($width - 130) / 2) / ($width - 130));
+    }
+  }
+  @media (max-width: 520px) {
+    .divide {
+      clear: both;
+      text-align: center;
+      width: 100%;
+      img {
+        margin: auto;
+        width: 80%;
+      }
+    }
+  }
+}
 
+/**
+ * Inline images
+ */
+@media (max-width: 480px) {
+  img.content-image,
+  .caption-inner {
+    width: 100% !important // The caption module hard codes the width in the html, so we need to override it here (!important)
+  }
+  div.caption {
+    margin: 10px 0;
+  }
+}
 
-
+/**
+ * Donate now
+ */
+.bean-donate {
+  @media (max-width: 806px) {
+    .p-30 {
+      font-size: 0.625em;
+    }
+  }
+  @media (max-width: 767px) {
+    .p-30,
+    .p-70 {
+      display: block;
+      clear: both;
+      width: 100%;
+    }
+    .p-30 {
+      font-size: 1em;
+      a {
+        display: block;
+        text-align: center;
+        width: 100%;
+      }
+    }
+    .p-70 {
+      padding: 20px;
+    }
+  }
+}
 
 
 

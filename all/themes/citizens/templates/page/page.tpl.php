@@ -11,11 +11,11 @@
   </div>
 
 
-  <div id="navigation-primary" class="navigation menu reverse-contrast reverse-contrast-lighter heading all-caps">
+  <div id="navigation-primary" class="navigation menu reverse-contrast reverse-contrast-lighter heading all-caps relative">
     <div class="inner navigation-primary-inner default-padding clearfix font-light">
       <?php print l('<div class="clearfix">' . theme('image', array('path' => base_path() . path_to_theme() . '/css/images/citizens-energy.png', 'alt' => 'Citizens Energy Logo', 'title' => 'Home', 'attributes' => array('id' => 'logo', 'class' => 'f-left'))) . '</div>', '<front>', array('html' => TRUE, 'attributes' => array('id' => 'logo-container'))); ?>
-      <div id="main-drop-down-toggle"><i class="icon-menu"></i></div>
       <?php print render($page['navigation_primary']); ?>
+      <div id="main-drop-down-toggle"><i class="icon-menu"></i></div>
     </div>
   </div><!-- /#navigation-primary -->
 
@@ -84,6 +84,12 @@
       <?php print render($page['footer']); ?>
     </div>
   </div> <!-- /#footer -->
+
+  <div id="footer-bottom" class="reverse-contrast heading font-small center-contents padding-all clearfix">
+    <div class="inner footer-bottom-inner">
+      <?php print render($page['footer_bottom']); ?>
+    </div>
+  </div> <!-- /#footer-bottom -->
 
 </div> <!-- /#page -->
 

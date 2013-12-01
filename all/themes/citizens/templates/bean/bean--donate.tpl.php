@@ -33,7 +33,7 @@
       <span class="font-large-27 font-light normal-case"><?php print render($content['field_cta_text']); ?></span>
       <?php print render($content['field_donate_online']); ?>
     </div>
-    <div class="p-30 background-green-darker table-cell align-left padding-all font-small font-white line-height-triple">
+    <div class="p-30 background-green-darker table-cell align-left padding-all font-small font-white">
       <?php print render($content['field_donate_mail']); ?>
       <?php print render($content['field_donate_corporate']); ?>
     </div>

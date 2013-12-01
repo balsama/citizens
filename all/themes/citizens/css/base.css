@@ -13,6 +13,9 @@ html {
   line-height: 1.4em;
   margin: 0; }
 
+body {
+  -webkit-text-size-adjust: 100%; }
+
 ::selection {
   background-color: #555555;
   color: #d0d0d0; }
@@ -53,6 +56,7 @@ ul li, ol li {
 
 .content ul,
 .content ol {
+  margin-bottom: 1em;
   margin-left: 1.2em; }
 
 ul.no-m-no-bul {
@@ -74,6 +78,7 @@ blockquote {
   text-align: center; }
 
 /* Headings */
+strong,
 .caption,
 blockquote,
 .heading {
@@ -104,8 +109,12 @@ h6 {
   font-size: 0.7em; }
 
 h2 {
+  clear: both;
   font-weight: 100;
   text-align: center; }
+
+h5 {
+  margin-bottom: 0; }
 
 .font-light {
   font-weight: 100; }
@@ -202,11 +211,17 @@ table {
 .background-tan {
   background-color: #fbf6f2; }
 
+.relative {
+  position: relative; }
+
 /**
  * Relative sizes
  */
 .font-small {
   font-size: 0.722em; }
+
+.font-medium-small {
+  font-size: 0.833em; }
 
 .font-normal {
   font-size: 1.125em; }
@@ -250,6 +265,9 @@ table {
   .font-white a {
     color: white; }
 
+.font-gray-medium {
+  color: #959595; }
+
 .border-green,
 .button.border-green {
   border-color: #638b2c; }
@@ -278,3 +296,19 @@ a.black:hover {
   .white-on-black a:link,
   .white-on-black a:visited {
     color: white; }
+
+/**
+ * Forms
+ */
+textarea,
+input.form-text {
+  border: 1px solid #d0d0d0;
+  outline: none;
+  padding: 0.4em 0.6em;
+  width: 100%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+  textarea:focus,
+  input.form-text:focus {
+    border-color: #a3a3a3; }
